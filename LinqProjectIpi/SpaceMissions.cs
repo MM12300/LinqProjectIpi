@@ -6,18 +6,24 @@ using Newtonsoft.Json.Linq;
 namespace LinqProjectIpi
 {
     public class SpaceMissions{
-        public void JsonTest()
-        {
-            var myJson = JObject.Parse(File.ReadAllText($@"{Directory.GetCurrentDirectory()}/JSON/spacemission.json"));
 
-            var marequete = from mission in myJson["AllMissions"]
-                            where mission["Status Rocket"].ToString().Contains("StatusActive", StringComparison.InvariantCultureIgnoreCase) select mission
-                            ;
+        private JObject missionCollection = JObject.Parse(File.ReadAllText($@"{Directory.GetCurrentDirectory()}/JSON/spacemission.json"));
 
-            foreach (var mission in marequete)
-            {
+        public void getAllMissions(){
+
+            //Requête
+            var missions = from mission in missionCollection["AllMissions"]
+                            where mission["Status Rocket"].ToString().Contains("StatusActive", StringComparison.InvariantCultureIgnoreCase) 
+                            select mission;
+
+            //Affichage
+            foreach (var mission in missions){
                 Console.WriteLine(mission);
             }
+        }
+
+        public void getCompanies(){
+            
         }
     }
 }
