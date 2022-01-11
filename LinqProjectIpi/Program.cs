@@ -39,7 +39,9 @@ namespace LinqProjectIpi
                 {
                     case "1":                        
                         Console.WriteLine("Les missions spatiales depuis 1957");
-                        return "space";
+                        SpaceMissions spacemission = new SpaceMissions();
+                    spacemission.getAllMissions();
+                    return "space";
                     case "2":
                         Console.WriteLine("In Option 2");
                         Starwarscharacters starwarscharacters = new Starwarscharacters();

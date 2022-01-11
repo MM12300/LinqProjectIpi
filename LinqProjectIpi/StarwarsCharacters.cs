@@ -11,6 +11,8 @@ namespace LinqProjectIpi
 
         public void getAllcharacters()
         {
+
+            Console.WriteLine(Directory.GetCurrentDirectory());
             var characters = from element in xmlFile.Descendants("characters")
                              select element;
 
