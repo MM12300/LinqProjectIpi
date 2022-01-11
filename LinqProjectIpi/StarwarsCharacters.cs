@@ -11,7 +11,7 @@ namespace LinqProjectIpi
 
         public void getAllcharacters()
         {
-            var characters = from element in xmlFile.Descendants("characters")
+            var characters = from element in xmlFile.Descendants("character")
                              select element;
 
             foreach(var character in characters)

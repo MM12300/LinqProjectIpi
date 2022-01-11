@@ -120,7 +120,7 @@
     <homeworld>Stewjon</homeworld>
     <species>Human</species>
   </character>
-  <character0>
+  <character>
     <name>Anakin Skywalker</name>
     <height>188</height>
     <mass>84</mass>
@@ -131,8 +131,8 @@
     <gender>male</gender>
     <homeworld>Tatooine</homeworld>
     <species>Human</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Wilhuff Tarkin</name>
     <height>180</height>
     <mass>NA</mass>
@@ -143,8 +143,8 @@
     <gender>male</gender>
     <homeworld>Eriadu</homeworld>
     <species>Human</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Chewbacca</name>
     <height>228</height>
     <mass>112</mass>
@@ -155,8 +155,8 @@
     <gender>male</gender>
     <homeworld>Kashyyyk</homeworld>
     <species>Wookiee</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Han Solo</name>
     <height>180</height>
     <mass>80</mass>
@@ -167,8 +167,8 @@
     <gender>male</gender>
     <homeworld>Corellia</homeworld>
     <species>Human</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>Greedo</name>
     <height>173</height>
     <mass>74</mass>
@@ -179,8 +179,8 @@
     <gender>male</gender>
     <homeworld>Rodia</homeworld>
     <species>Rodian</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Jabba Desilijic Tiure</name>
     <height>175</height>
     <mass>1,358</mass>
@@ -191,8 +191,8 @@
     <gender>hermaphrodite</gender>
     <homeworld>Nal Hutta</homeworld>
     <species>Hutt</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Wedge Antilles</name>
     <height>170</height>
     <mass>77</mass>
@@ -203,8 +203,8 @@
     <gender>male</gender>
     <homeworld>Corellia</homeworld>
     <species>Human</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Jek Tono Porkins</name>
     <height>180</height>
     <mass>110</mass>
@@ -215,8 +215,8 @@
     <gender>male</gender>
     <homeworld>Bestine IV</homeworld>
     <species>Human</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Yoda</name>
     <height>66</height>
     <mass>17</mass>
@@ -227,8 +227,8 @@
     <gender>male</gender>
     <homeworld>NA</homeworld>
     <species>Yoda's species</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Palpatine</name>
     <height>170</height>
     <mass>75</mass>
@@ -239,8 +239,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>Human</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Boba Fett</name>
     <height>183</height>
     <mass>78.2</mass>
@@ -251,8 +251,8 @@
     <gender>male</gender>
     <homeworld>Kamino</homeworld>
     <species>Human</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>IG-88</name>
     <height>200</height>
     <mass>140</mass>
@@ -263,8 +263,8 @@
     <gender>none</gender>
     <homeworld>NA</homeworld>
     <species>Droid</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Bossk</name>
     <height>190</height>
     <mass>113</mass>
@@ -275,8 +275,8 @@
     <gender>male</gender>
     <homeworld>Trandosha</homeworld>
     <species>Trandoshan</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Lando Calrissian</name>
     <height>177</height>
     <mass>79</mass>
@@ -287,8 +287,8 @@
     <gender>male</gender>
     <homeworld>Socorro</homeworld>
     <species>Human</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>Lobot</name>
     <height>175</height>
     <mass>79</mass>
@@ -299,8 +299,8 @@
     <gender>male</gender>
     <homeworld>Bespin</homeworld>
     <species>Human</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Ackbar</name>
     <height>180</height>
     <mass>83</mass>
@@ -311,8 +311,8 @@
     <gender>male</gender>
     <homeworld>Mon Cala</homeworld>
     <species>Mon Calamari</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Mon Mothma</name>
     <height>150</height>
     <mass>NA</mass>
@@ -323,8 +323,8 @@
     <gender>female</gender>
     <homeworld>Chandrila</homeworld>
     <species>Human</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Arvel Crynyd</name>
     <height>NA</height>
     <mass>NA</mass>
@@ -335,8 +335,8 @@
     <gender>male</gender>
     <homeworld>NA</homeworld>
     <species>Human</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Wicket Systri Warrick</name>
     <height>88</height>
     <mass>20</mass>
@@ -347,8 +347,8 @@
     <gender>male</gender>
     <homeworld>Endor</homeworld>
     <species>Ewok</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Nien Nunb</name>
     <height>160</height>
     <mass>68</mass>
@@ -359,8 +359,8 @@
     <gender>male</gender>
     <homeworld>Sullust</homeworld>
     <species>Sullustan</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Qui-Gon Jinn</name>
     <height>193</height>
     <mass>89</mass>
@@ -371,8 +371,8 @@
     <gender>male</gender>
     <homeworld>NA</homeworld>
     <species>Human</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Nute Gunray</name>
     <height>191</height>
     <mass>90</mass>
@@ -383,8 +383,8 @@
     <gender>male</gender>
     <homeworld>Cato Neimoidia</homeworld>
     <species>Neimodian</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Finis Valorum</name>
     <height>170</height>
     <mass>NA</mass>
@@ -395,8 +395,8 @@
     <gender>male</gender>
     <homeworld>Coruscant</homeworld>
     <species>Human</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Jar Jar Binks</name>
     <height>196</height>
     <mass>66</mass>
@@ -407,8 +407,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>Gungan</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>Roos Tarpals</name>
     <height>224</height>
     <mass>82</mass>
@@ -419,8 +419,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>Gungan</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Rugor Nass</name>
     <height>206</height>
     <mass>NA</mass>
@@ -431,8 +431,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>Gungan</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Ric Olié</name>
     <height>183</height>
     <mass>NA</mass>
@@ -443,8 +443,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>NA</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Watto</name>
     <height>137</height>
     <mass>NA</mass>
@@ -455,8 +455,8 @@
     <gender>male</gender>
     <homeworld>Toydaria</homeworld>
     <species>Toydarian</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Sebulba</name>
     <height>112</height>
     <mass>40</mass>
@@ -467,8 +467,8 @@
     <gender>male</gender>
     <homeworld>Malastare</homeworld>
     <species>Dug</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Quarsh Panaka</name>
     <height>183</height>
     <mass>NA</mass>
@@ -479,8 +479,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>NA</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Shmi Skywalker</name>
     <height>163</height>
     <mass>NA</mass>
@@ -491,8 +491,8 @@
     <gender>female</gender>
     <homeworld>Tatooine</homeworld>
     <species>Human</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Darth Maul</name>
     <height>175</height>
     <mass>80</mass>
@@ -503,8 +503,8 @@
     <gender>male</gender>
     <homeworld>Dathomir</homeworld>
     <species>Zabrak</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Bib Fortuna</name>
     <height>180</height>
     <mass>NA</mass>
@@ -515,8 +515,8 @@
     <gender>male</gender>
     <homeworld>Ryloth</homeworld>
     <species>Twi'lek</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Ayla Secura</name>
     <height>178</height>
     <mass>55</mass>
@@ -527,8 +527,8 @@
     <gender>female</gender>
     <homeworld>Ryloth</homeworld>
     <species>Twi'lek</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>Dud Bolt</name>
     <height>94</height>
     <mass>45</mass>
@@ -539,8 +539,8 @@
     <gender>male</gender>
     <homeworld>Vulpter</homeworld>
     <species>Vulptereen</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Gasgano</name>
     <height>122</height>
     <mass>NA</mass>
@@ -551,8 +551,8 @@
     <gender>male</gender>
     <homeworld>Troiken</homeworld>
     <species>Xexto</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Ben Quadinaros</name>
     <height>163</height>
     <mass>65</mass>
@@ -563,8 +563,8 @@
     <gender>male</gender>
     <homeworld>Tund</homeworld>
     <species>Toong</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Mace Windu</name>
     <height>188</height>
     <mass>84</mass>
@@ -575,8 +575,8 @@
     <gender>male</gender>
     <homeworld>Haruun Kal</homeworld>
     <species>Human</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Ki-Adi-Mundi</name>
     <height>198</height>
     <mass>82</mass>
@@ -587,8 +587,8 @@
     <gender>male</gender>
     <homeworld>Cerea</homeworld>
     <species>Cerean</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Kit Fisto</name>
     <height>196</height>
     <mass>87</mass>
@@ -599,8 +599,8 @@
     <gender>male</gender>
     <homeworld>Glee Anselm</homeworld>
     <species>Nautolan</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Eeth Koth</name>
     <height>171</height>
     <mass>NA</mass>
@@ -611,8 +611,8 @@
     <gender>male</gender>
     <homeworld>Iridonia</homeworld>
     <species>Zabrak</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Adi Gallia</name>
     <height>184</height>
     <mass>50</mass>
@@ -623,8 +623,8 @@
     <gender>female</gender>
     <homeworld>Coruscant</homeworld>
     <species>Tholothian</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Saesee Tiin</name>
     <height>188</height>
     <mass>NA</mass>
@@ -635,8 +635,8 @@
     <gender>male</gender>
     <homeworld>Iktotch</homeworld>
     <species>Iktotchi</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Yarael Poof</name>
     <height>264</height>
     <mass>NA</mass>
@@ -647,8 +647,8 @@
     <gender>male</gender>
     <homeworld>Quermia</homeworld>
     <species>Quermian</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>Plo Koon</name>
     <height>188</height>
     <mass>80</mass>
@@ -659,8 +659,8 @@
     <gender>male</gender>
     <homeworld>Dorin</homeworld>
     <species>Kel Dor</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Mas Amedda</name>
     <height>196</height>
     <mass>NA</mass>
@@ -671,8 +671,8 @@
     <gender>male</gender>
     <homeworld>Champala</homeworld>
     <species>Chagrian</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Gregar Typho</name>
     <height>185</height>
     <mass>85</mass>
@@ -683,8 +683,8 @@
     <gender>male</gender>
     <homeworld>Naboo</homeworld>
     <species>Human</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Cordé</name>
     <height>157</height>
     <mass>NA</mass>
@@ -695,8 +695,8 @@
     <gender>female</gender>
     <homeworld>Naboo</homeworld>
     <species>Human</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Cliegg Lars</name>
     <height>183</height>
     <mass>NA</mass>
@@ -707,8 +707,8 @@
     <gender>male</gender>
     <homeworld>Tatooine</homeworld>
     <species>Human</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Poggle the Lesser</name>
     <height>183</height>
     <mass>80</mass>
@@ -719,8 +719,8 @@
     <gender>male</gender>
     <homeworld>Geonosis</homeworld>
     <species>Geonosian</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Luminara Unduli</name>
     <height>170</height>
     <mass>56.2</mass>
@@ -731,8 +731,8 @@
     <gender>female</gender>
     <homeworld>Mirial</homeworld>
     <species>Mirialan</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Barriss Offee</name>
     <height>166</height>
     <mass>50</mass>
@@ -743,8 +743,8 @@
     <gender>female</gender>
     <homeworld>Mirial</homeworld>
     <species>Mirialan</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Dormé</name>
     <height>165</height>
     <mass>NA</mass>
@@ -755,8 +755,8 @@
     <gender>female</gender>
     <homeworld>Naboo</homeworld>
     <species>Human</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Dooku</name>
     <height>193</height>
     <mass>80</mass>
@@ -767,8 +767,8 @@
     <gender>male</gender>
     <homeworld>Serenno</homeworld>
     <species>Human</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>Bail Prestor Organa</name>
     <height>191</height>
     <mass>NA</mass>
@@ -779,8 +779,8 @@
     <gender>male</gender>
     <homeworld>Alderaan</homeworld>
     <species>Human</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Jango Fett</name>
     <height>183</height>
     <mass>79</mass>
@@ -791,8 +791,8 @@
     <gender>male</gender>
     <homeworld>Concord Dawn</homeworld>
     <species>Human</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Zam Wesell</name>
     <height>168</height>
     <mass>55</mass>
@@ -803,8 +803,8 @@
     <gender>female</gender>
     <homeworld>Zolan</homeworld>
     <species>Clawdite</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Dexter Jettster</name>
     <height>198</height>
     <mass>102</mass>
@@ -815,8 +815,8 @@
     <gender>male</gender>
     <homeworld>Ojom</homeworld>
     <species>Besalisk</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Lama Su</name>
     <height>229</height>
     <mass>88</mass>
@@ -827,8 +827,8 @@
     <gender>male</gender>
     <homeworld>Kamino</homeworld>
     <species>Kaminoan</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Taun We</name>
     <height>213</height>
     <mass>NA</mass>
@@ -839,8 +839,8 @@
     <gender>female</gender>
     <homeworld>Kamino</homeworld>
     <species>Kaminoan</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Jocasta Nu</name>
     <height>167</height>
     <mass>NA</mass>
@@ -851,8 +851,8 @@
     <gender>female</gender>
     <homeworld>Coruscant</homeworld>
     <species>Human</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Ratts Tyerell</name>
     <height>79</height>
     <mass>15</mass>
@@ -863,8 +863,8 @@
     <gender>male</gender>
     <homeworld>Aleen Minor</homeworld>
     <species>Aleena</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>R4-P17</name>
     <height>96</height>
     <mass>NA</mass>
@@ -875,8 +875,8 @@
     <gender>female</gender>
     <homeworld>NA</homeworld>
     <species>NA</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Wat Tambor</name>
     <height>193</height>
     <mass>48</mass>
@@ -887,8 +887,8 @@
     <gender>male</gender>
     <homeworld>Skako</homeworld>
     <species>Skakoan</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>San Hill</name>
     <height>191</height>
     <mass>NA</mass>
@@ -899,8 +899,8 @@
     <gender>male</gender>
     <homeworld>Muunilinst</homeworld>
     <species>Muun</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Shaak Ti</name>
     <height>178</height>
     <mass>57</mass>
@@ -911,8 +911,8 @@
     <gender>female</gender>
     <homeworld>Shili</homeworld>
     <species>Togruta</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Grievous</name>
     <height>216</height>
     <mass>159</mass>
@@ -923,8 +923,8 @@
     <gender>male</gender>
     <homeworld>Kalee</homeworld>
     <species>Kaleesh</species>
-  </character6>
-  <character7>
+  </character>
+  <character>
     <name>Tarfful</name>
     <height>234</height>
     <mass>136</mass>
@@ -935,8 +935,8 @@
     <gender>male</gender>
     <homeworld>Kashyyyk</homeworld>
     <species>Wookiee</species>
-  </character7>
-  <character8>
+  </character>
+  <character>
     <name>Raymus Antilles</name>
     <height>188</height>
     <mass>79</mass>
@@ -947,8 +947,8 @@
     <gender>male</gender>
     <homeworld>Alderaan</homeworld>
     <species>Human</species>
-  </character8>
-  <character9>
+  </character>
+  <character>
     <name>Sly Moore</name>
     <height>178</height>
     <mass>48</mass>
@@ -959,8 +959,8 @@
     <gender>female</gender>
     <homeworld>Umbara</homeworld>
     <species>NA</species>
-  </character9>
-  <character0>
+  </character>
+  <character>
     <name>Tion Medon</name>
     <height>206</height>
     <mass>80</mass>
@@ -971,8 +971,8 @@
     <gender>male</gender>
     <homeworld>Utapau</homeworld>
     <species>Pau'an</species>
-  </character0>
-  <character1>
+  </character>
+  <character>
     <name>Finn</name>
     <height>NA</height>
     <mass>NA</mass>
@@ -983,8 +983,8 @@
     <gender>male</gender>
     <homeworld>NA</homeworld>
     <species>Human</species>
-  </character1>
-  <character2>
+  </character>
+  <character>
     <name>Rey</name>
     <height>NA</height>
     <mass>NA</mass>
@@ -995,8 +995,8 @@
     <gender>female</gender>
     <homeworld>NA</homeworld>
     <species>Human</species>
-  </character2>
-  <character3>
+  </character>
+  <character>
     <name>Poe Dameron</name>
     <height>NA</height>
     <mass>NA</mass>
@@ -1007,8 +1007,8 @@
     <gender>male</gender>
     <homeworld>NA</homeworld>
     <species>Human</species>
-  </character3>
-  <character4>
+  </character>
+  <character>
     <name>BB8</name>
     <height>NA</height>
     <mass>NA</mass>
@@ -1019,8 +1019,8 @@
     <gender>none</gender>
     <homeworld>NA</homeworld>
     <species>Droid</species>
-  </character4>
-  <character5>
+  </character>
+  <character>
     <name>Captain Phasma</name>
     <height>NA</height>
     <mass>NA</mass>
@@ -1031,8 +1031,8 @@
     <gender>female</gender>
     <homeworld>NA</homeworld>
     <species>NA</species>
-  </character5>
-  <character6>
+  </character>
+  <character>
     <name>Padmé Amidala</name>
     <height>165</height>
     <mass>45</mass>
@@ -1043,5 +1043,5 @@
     <gender>female</gender>
     <homeworld>Naboo</homeworld>
     <species>Human</species>
-  </character6>
+  </character>
 </root>
