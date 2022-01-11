@@ -39,17 +39,20 @@ namespace LinqProjectIpi
                 {
                     case "1":                        
                         Console.WriteLine("Les missions spatiales depuis 1957");
-                        SpaceMissions spacemission = new SpaceMissions();
-                    spacemission.getAllMissions();
-                    return "space";
+                        SpaceMissionHMI hmi = new SpaceMissionHMI();
+                        hmi.main();
+                        return "space";
+
                     case "2":
                         Console.WriteLine("In Option 2");
                         Starwarscharacters starwarscharacters = new Starwarscharacters();
                         starwarscharacters.getAllcharacters();
-                    return "starwars";
+                        return "starwars";
+
                     case "3":
                         Console.WriteLine("Exiting the program...");
                         return "exit";
+
                     default:
                         Console.WriteLine("Choississez une des 3 options uniquement !");
                         Console.WriteLine("------------------------------------------");
