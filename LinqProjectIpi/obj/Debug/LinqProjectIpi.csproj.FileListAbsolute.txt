@@ -1,0 +1,7 @@
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\bin\Debug\LinqProjectIpi.exe.config
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\bin\Debug\LinqProjectIpi.exe
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\bin\Debug\LinqProjectIpi.pdb
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\obj\Debug\LinqProjectIpi.csproj.AssemblyReference.cache
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\obj\Debug\LinqProjectIpi.csproj.CoreCompileInputs.cache
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\obj\Debug\LinqProjectIpi.exe
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\obj\Debug\LinqProjectIpi.pdb
