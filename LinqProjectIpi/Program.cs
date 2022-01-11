@@ -44,7 +44,9 @@ namespace LinqProjectIpi
                         return "space";
                     case "2":
                         Console.WriteLine("In Option 2");
-                        return "starwars";
+                        Starwarscharacters starwarscharacters = new Starwarscharacters();
+                        starwarscharacters.getAllcharacters();
+                    return "starwars";
                     case "3":
                         Console.WriteLine("Exiting the program...");
                         return "exit";
