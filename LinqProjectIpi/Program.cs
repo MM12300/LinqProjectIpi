@@ -11,17 +11,18 @@ namespace LinqProjectIpi
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Welcome");
+            Menu();
         }
 
-        private void menu(){
+        private void Menu(){
             Console.Clear();
+
             Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
             Console.WriteLine("                 Welcome to this Project");
             Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
 
             Console.WriteLine("Choose your option:");
-            Console.WriteLine("1) Optionn 1");
+            Console.WriteLine("1) Option 1");
             Console.WriteLine("2) Option 2");
             Console.WriteLine("3) Exit");
 
@@ -42,7 +43,7 @@ namespace LinqProjectIpi
                         return null;
 
                     default:
-                        Console.WriteLine("Bad input, exiting the game...");
+                        Console.WriteLine("Bad input, exiting the program...");
                         return null;
                 }
             }
