@@ -171,7 +171,7 @@
     "Company Name": "Rocket Lab",
     "Location": "Rocket Lab LC-1A, M?hia Peninsula, New Zealand",
     "Datum": "Sat Jul 04, 2020 21:19 UTC",
-    "Detail": "Electron/Curie | Pics Or It Didn??¦t Happen",
+    "Detail": "Electron/Curie | Pics Or It Didnée¦t Happen",
     "Status Rocket": "StatusActive",
     "Rocket": 7.5,
     "Status Mission": "Failure"
@@ -666,7 +666,7 @@
     "Company Name": "CASC",
     "Location": "LC-9, Taiyuan Satellite Launch Center, China",
     "Datum": "Wed Jan 15, 2020 02:53 UTC",
-    "Detail": "Long March 2D | Jilin-1 Wideband 01 & ??uSat-7/8",
+    "Detail": "Long March 2D | Jilin-1 Wideband 01 & éeuSat-7/8",
     "Status Rocket": "StatusActive",
     "Rocket": 29.75,
     "Status Mission": "Success"
@@ -710,7 +710,7 @@
     "Company Name": "VKS RF",
     "Location": "Site 133/3, Plesetsk Cosmodrome, Russia",
     "Datum": "Thu Dec 26, 2019 23:11 UTC",
-    "Detail": "Rokot/Briz KM | Gonets-M ???24, 25, 26 [block-15] & Blits-M1",
+    "Detail": "Rokot/Briz KM | Gonets-M ée?24, 25, 26 [block-15] & Blits-M1",
     "Status Rocket": "StatusRetired",
     "Rocket": 41.8,
     "Status Mission": "Success"
@@ -4307,7 +4307,7 @@
     "Company Name": "Arianespace",
     "Location": "ELV-1 (SLV), Guiana Space Centre, French Guiana, France",
     "Datum": "Mon Dec 05, 2016 13:51 UTC",
-    "Detail": "Vega | G??kt??rk-1A",
+    "Detail": "Vega | Géektéerk-1A",
     "Status Rocket": "StatusActive",
     "Rocket": 37,
     "Status Mission": "Success"
@@ -4802,7 +4802,7 @@
     "Company Name": "CASC",
     "Location": "LC-9, Taiyuan Satellite Launch Center, China",
     "Datum": "Mon May 30, 2016 03:17 UTC",
-    "Detail": "Long March 4B | Ziyuan III-02 & ??uSat-1, 2",
+    "Detail": "Long March 4B | Ziyuan III-02 & éeuSat-1, 2",
     "Status Rocket": "StatusActive",
     "Rocket": 64.68,
     "Status Mission": "Success"
@@ -5550,7 +5550,7 @@
     "Company Name": "SpaceX",
     "Location": "SLC-40, Cape Canaveral AFS, Florida, USA",
     "Datum": "Mon Apr 27, 2015 23:03 UTC",
-    "Detail": "Falcon 9 v1.1 | Turkmen??lem52E/MonacoSat",
+    "Detail": "Falcon 9 v1.1 | Turkmenéelem52E/MonacoSat",
     "Status Rocket": "StatusRetired",
     "Rocket": 56.5,
     "Status Mission": "Success"
@@ -6012,7 +6012,7 @@
     "Company Name": "Arianespace",
     "Location": "ELA-3, Guiana Space Centre, French Guiana, France",
     "Datum": "Tue Jul 29, 2014 23:47 UTC",
-    "Detail": "Ariane 5 ES | Georges Lema??tre ATV",
+    "Detail": "Ariane 5 ES | Georges Lemaéetre ATV",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
@@ -6892,7 +6892,7 @@
     "Company Name": "Arianespace",
     "Location": "ELS, Guiana Space Centre, French Guiana, France",
     "Datum": "Sun Dec 02, 2012 02:02 UTC",
-    "Detail": "Soyuz ST-A/Fregat | Pl??iades 1B",
+    "Detail": "Soyuz ST-A/Fregat | Pléeiades 1B",
     "Status Rocket": "StatusActive",
     "Rocket": 80,
     "Status Mission": "Success"
@@ -7266,7 +7266,7 @@
     "Company Name": "Arianespace",
     "Location": "ELS, Guiana Space Centre, French Guiana, France",
     "Datum": "Sat Dec 17, 2011 02:03 UTC",
-    "Detail": "Soyuz ST-A/Fregat | Pl??iades 1A, SSOT, Elisa",
+    "Detail": "Soyuz ST-A/Fregat | Pléeiades 1A, SSOT, Elisa",
     "Status Rocket": "StatusActive",
     "Rocket": 80,
     "Status Mission": "Success"
@@ -13470,7 +13470,7 @@
     "Company Name": "Arianespace",
     "Location": "ELA-2, Guiana Space Centre, French Guiana, France",
     "Datum": "Fri Dec 03, 1999 16:22 UTC",
-    "Detail": "Ariane 40 | Helios 1B & Cl??mentine",
+    "Detail": "Ariane 40 | Helios 1B & Cléementine",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
@@ -14966,7 +14966,7 @@
     "Company Name": "Lockheed",
     "Location": "SLC-40, Cape Canaveral AFS, Florida, USA",
     "Datum": "Wed Oct 15, 1997 08:43 UTC",
-    "Detail": "Titan IV(401)B | Cassini???Huygens",
+    "Detail": "Titan IV(401)B | Cassiniée?Huygens",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
@@ -15791,7 +15791,7 @@
     "Company Name": "Arianespace",
     "Location": "ELA-2, Guiana Space Centre, French Guiana, France",
     "Datum": "Tue Jul 09, 1996 22:24 UTC",
-    "Detail": "Ariane 44L | Arabsat-2A, T??rksat 1C",
+    "Detail": "Ariane 44L | Arabsat-2A, Téerksat 1C",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
@@ -19212,7 +19212,7 @@
     "Company Name": "RVSN USSR",
     "Location": "Site 132/1, Plesetsk Cosmodrome, Russia",
     "Datum": "Tue Jun 25, 1991 13:20 UTC",
-    "Detail": "Cosmos-3M (11K65M) | Ta??foun n†­59",
+    "Detail": "Cosmos-3M (11K65M) | Taéefoun n†­59",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Failure"
@@ -25196,7 +25196,7 @@
     "Company Name": "RVSN USSR",
     "Location": "Site 132/2, Plesetsk Cosmodrome, Russia",
     "Datum": "Tue Jan 25, 1983 12:00 UTC",
-    "Detail": "Cosmos-3M (11K65M) | Ta??foun n†­32",
+    "Detail": "Cosmos-3M (11K65M) | Taéefoun n†­32",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Failure"
@@ -25867,7 +25867,7 @@
     "Company Name": "RVSN USSR",
     "Location": "Site 107/1, Kapustin Yar, Russia",
     "Datum": "Thu Mar 04, 1982 16:41 UTC",
-    "Detail": "Cosmos-3M (11K65M) | Ta??foun n†­27",
+    "Detail": "Cosmos-3M (11K65M) | Taéefoun n†­27",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Failure"
@@ -32027,7 +32027,7 @@
     "Company Name": "NASA",
     "Location": "LC-39B, Kennedy Space Center, Florida, USA",
     "Datum": "Tue Jul 15, 1975 19:50 UTC",
-    "Detail": "Saturn IB | ASTP (Apollo???Soyuz Test Project)",
+    "Detail": "Saturn IB | ASTP (Apolloée?Soyuz Test Project)",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
@@ -37395,7 +37395,7 @@
     "Company Name": "CNES",
     "Location": "ELD, Guiana Space Centre, French Guiana, France",
     "Datum": "Sat Dec 12, 1970 12:00 UTC",
-    "Detail": "Diamant B | P??ole",
+    "Detail": "Diamant B | Péeole",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
@@ -39276,7 +39276,7 @@
     "Company Name": "RVSN USSR",
     "Location": "Site 81/24, Baikonur Cosmodrome, Kazakhstan",
     "Datum": "Wed Apr 02, 1969 10:33 UTC",
-    "Detail": "Proton K/Block D | M-69 ???522",
+    "Detail": "Proton K/Block D | M-69 ée?522",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Failure"
@@ -41803,7 +41803,7 @@
   {
     "": 3800,
     "Unnamed: 0": 3800,
-    "Company Name": "Arm??e de l'Air",
+    "Company Name": "Arméee de l'Air",
     "Location": "Brigitte, Hammaguir, Algeria, France",
     "Datum": "Wed Feb 15, 1967 10:06 UTC",
     "Detail": "Diamant A | Diad?ªme 2",
@@ -41836,7 +41836,7 @@
   {
     "": 3803,
     "Unnamed: 0": 3803,
-    "Company Name": "Arm??e de l'Air",
+    "Company Name": "Arméee de l'Air",
     "Location": "Brigitte, Hammaguir, Algeria, France",
     "Datum": "Wed Feb 08, 1967 08:39 UTC",
     "Detail": "Diamant A | Diad?ªme 1",
@@ -42936,7 +42936,7 @@
   {
     "": 3903,
     "Unnamed: 0": 3903,
-    "Company Name": "Arm??e de l'Air",
+    "Company Name": "Arméee de l'Air",
     "Location": "Brigitte, Hammaguir, Algeria, France",
     "Datum": "Thu Feb 17, 1966 07:33 UTC",
     "Detail": "Diamant A | Diapason",
@@ -43156,10 +43156,10 @@
   {
     "": 3923,
     "Unnamed: 0": 3923,
-    "Company Name": "Arm??e de l'Air",
+    "Company Name": "Arméee de l'Air",
     "Location": "Brigitte, Hammaguir, Algeria, France",
     "Datum": "Fri Nov 26, 1965 14:47 UTC",
-    "Detail": "Diamant A | Ast??rix",
+    "Detail": "Diamant A | Astéerix",
     "Status Rocket": "StatusRetired",
     "Rocket": "",
     "Status Mission": "Success"
