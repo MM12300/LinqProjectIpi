@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/home/progradius/.dotnet/store/|arch|/|tfm|",
+      "/home/progradius/.nuget/packages"
+    ]
+  }
+}

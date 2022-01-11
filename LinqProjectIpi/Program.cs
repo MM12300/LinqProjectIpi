@@ -39,6 +39,8 @@ namespace LinqProjectIpi
                 {
                     case "1":                        
                         Console.WriteLine("Les missions spatiales depuis 1957");
+                        SpaceMissions spaceMissions = new SpaceMissions();
+                        spaceMissions.JsonTest();
                         return "space";
                     case "2":
                         Console.WriteLine("In Option 2");

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_CODE\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi.csproj": {}
+    "/home/progradius/DevProject/EISI/LinQ/LinqProjectIpi/LinqProjectIpi/LinqProjectIpi.csproj": {}
   },
   "projects": {
-    "C:\\_CODE\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi.csproj": {
+    "/home/progradius/DevProject/EISI/LinQ/LinqProjectIpi/LinqProjectIpi/LinqProjectIpi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_CODE\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi.csproj",
+        "projectUniqueName": "/home/progradius/DevProject/EISI/LinQ/LinqProjectIpi/LinqProjectIpi/LinqProjectIpi.csproj",
         "projectName": "LinqProjectIpi",
-        "projectPath": "C:\\_CODE\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi.csproj",
-        "packagesPath": "C:\\Users\\nergg\\.nuget\\packages\\",
-        "outputPath": "C:\\_CODE\\LinqProjectIpi\\LinqProjectIpi\\LinqProjectIpi\\obj\\",
+        "projectPath": "/home/progradius/DevProject/EISI/LinQ/LinqProjectIpi/LinqProjectIpi/LinqProjectIpi.csproj",
+        "packagesPath": "/home/progradius/.nuget/packages/",
+        "outputPath": "/home/progradius/DevProject/EISI/LinQ/LinqProjectIpi/LinqProjectIpi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nergg\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/progradius/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +37,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -49,12 +53,22 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[3.1.21, 3.1.21]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
