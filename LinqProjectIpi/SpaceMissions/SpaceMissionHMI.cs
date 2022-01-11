@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using LinqProjectIpi.SpaceMissions;
+using System.Threading;
 
 namespace LinqProjectIpi
 {
@@ -47,14 +48,15 @@ namespace LinqProjectIpi
                     case "2":
                         Console.WriteLine("Recherche par société");
                         Console.WriteLine("Liste des sociétés disponibles:");
-                        getCompanies();
+                        searchByCompany();
+                        main();
                         break;
 
                     case "3":
                         Console.WriteLine("Recherche par pays");
                         Console.WriteLine("Liste des pays disponibles:");
-                        getCountries();
                         searchByCountry();
+                        main();
                         break;
 
                     default:
@@ -67,18 +69,14 @@ namespace LinqProjectIpi
 
         void getAllMissions(){
             //Requête
-            var missions = from mission in missionCollection["AllMissions"]
-                            where mission["Status Rocket"].ToString().Contains("StatusActive", StringComparison.InvariantCultureIgnoreCase) 
-                            select mission;
+            var missions = selectMissions();
             //Affichage
-            foreach (var mission in missions){
-                Console.WriteLine(mission);
-            }
+            cappedChoice(missions.ToList());
         }
 
         public void getCompanies(){
             //Compagnies
-            var companies = simpleSelectRequest("Company Name").Distinct();            
+            var companies = selectRequest("Company Name").Distinct();            
             //Affichage
             foreach (var companie in companies){
                 Console.WriteLine(companie);
@@ -88,9 +86,8 @@ namespace LinqProjectIpi
         public void getCountries(){
 
             //Location
-            var locations = simpleSelectRequest("Location").Distinct();
+            var locations = selectRequest("Location").Distinct();
             List<string> countries = new List<string>();
-
             //Récupération des pays
             foreach (var location in locations){
                 var country = location.ToString().Split(",").Last();
@@ -103,30 +100,58 @@ namespace LinqProjectIpi
         }
 
         public void searchByCountry(){
-            Console.WriteLine("Ecrivez votre pays ...");
+            //Affichage de la liste des pays
+            getCountries();
+            Console.WriteLine("Entrez le pays dont vous voulez récupérer les missions ...");
+            //CHoix de l'utilisateur pour le pays
             var userInput = Console.ReadLine();
-
-            var missions = from mission in missionCollection[collectionName]
-                            where mission["Location"].ToString().Contains(userInput, StringComparison.InvariantCultureIgnoreCase)
-                            select new SpaceMission(Convert.ToInt16(mission[""]), 
-                                                    mission["Company Name"].ToString(), 
-                                                    mission["Detail"].ToString(), 
-                                                    mission["Status Rocket"].ToString(), 
-                                                    mission["Status Mission"].ToString());
-
+            //Récupération des missions
+            var missions = whereRequest("Location", userInput);
+            //Affichage
             cappedChoice(missions.ToList());
         }
 
         public void searchByCompany(){
+            //Affichage de la liste des sociétés
+            getCompanies();
+            Console.WriteLine("Entrez la société dont vous voulez récupérer les missions ...");
+            //CHoix de l'utilisateur pour la société
+            var userInput = Console.ReadLine();
+            //Récupération des missions
+            var missions = whereRequest("Company Name", userInput);
+            //Affichage
+            cappedChoice(missions.ToList());
 
         }
 
 
-        private IEnumerable<JToken> simpleSelectRequest(string fieldName){
+        private IEnumerable<JToken> selectRequest(string fieldName){
             var elements = from element in missionCollection[collectionName]                
                 select element[fieldName];
 
-                return elements;        
+            return elements;        
+        }
+
+        private IEnumerable<SpaceMission> selectMissions(){
+            var missions = from mission in missionCollection["AllMissions"]
+                select new SpaceMission(Convert.ToInt16(mission[""]), 
+                            mission["Company Name"].ToString(), 
+                            mission["Detail"].ToString(), 
+                            mission["Status Rocket"].ToString(), 
+                            mission["Status Mission"].ToString());
+
+            return missions;
+        }
+
+        private IEnumerable<SpaceMission> whereRequest(string fieldName, string research){
+            var elements = from element in missionCollection[collectionName]
+                where element[fieldName].ToString().Contains(research, StringComparison.InvariantCultureIgnoreCase)
+                select new SpaceMission(Convert.ToInt16(element[""]), 
+                                        element["Company Name"].ToString(), 
+                                        element["Detail"].ToString(), 
+                                        element["Status Rocket"].ToString(), 
+                                        element["Status Mission"].ToString());
+            return elements;
         }
 
         private void cappedChoice(List<SpaceMission> missionList){
@@ -134,15 +159,16 @@ namespace LinqProjectIpi
             Console.WriteLine("Combien veux tu en afficher ?");
             var userInput = Convert.ToInt16(Console.ReadLine());
 
-            for(int i = 1; i <= userInput; i++){
+            for(int i = 0; i < userInput; i++){
                 //Mission
+                Console.WriteLine(i);
                 var mission = missionList.ToList()[i];
                 mission.missionDetail();
             }
-        }
-
-        
-
-
+            
+            Console.WriteLine();
+            Console.WriteLine("Appuyez sur entrée pour continuer");
+            Console.ReadLine();
+        }    
     }
 }
