@@ -46,7 +46,7 @@ namespace LinqProjectIpi
                     case "2":
                         Console.WriteLine("In Option 2");
                         Starwarscharacters starwarscharacters = new Starwarscharacters();
-                        starwarscharacters.getAllcharacters();
+                        starwarscharacters.getAllCharactersDetails();
                         return "starwars";
 
                     case "3":
