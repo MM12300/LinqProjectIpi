@@ -7,7 +7,6 @@ C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\bin\Debug\netcoreapp3.1\Li
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\bin\Debug\netcoreapp3.1\LinqProjectIpi.dll
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\bin\Debug\netcoreapp3.1\LinqProjectIpi.pdb
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.csproj.AssemblyReference.cache
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.GeneratedMSBuildEditorConfig.editorconfig
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.AssemblyInfoInputs.cache
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.AssemblyInfo.cs
@@ -16,3 +15,4 @@ C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\Li
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.dll
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.pdb
 C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.genruntimeconfig.cache
+C:\_CODE\LinqProjectIpi\LinqProjectIpi\LinqProjectIpi\obj\Debug\netcoreapp3.1\LinqProjectIpi.csproj.AssemblyReference.cache
