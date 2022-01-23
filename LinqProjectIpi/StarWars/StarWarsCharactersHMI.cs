@@ -43,6 +43,7 @@ namespace LinqProjectIpi
                     break;
 
                 case "2":
+                    Console.WriteLine();
                     Console.WriteLine("Search characters with different criterias");
                     searchMenu();
                     main();
@@ -135,58 +136,48 @@ namespace LinqProjectIpi
             Console.WriteLine("10 - Specie");
             Console.WriteLine("11 - Return to Star Wars Menu");
             Console.WriteLine();
-            Console.WriteLine("\r\n Choose an option)");
+            Console.WriteLine("\r\n Choose an option");
 
             switch (Console.ReadLine())
             {
                 case "1":
-                    Console.WriteLine("Search characters by name");
-                    getCharactersBy("Name");
+                    searchProcess("Name");
                     searchMenu();
                     break;
                 case "2":
-                    Console.WriteLine("Search characters by height");
-                    getCharactersBy("Height");
+                    searchProcess("Height");
                     searchMenu();
                     break;
                 case "3":
-                    Console.WriteLine("Search characters by mass");
-                    getCharactersBy("Mass");
+                    searchProcess("Mass");
                     searchMenu();
                     break;
                 case "4":
-                    Console.WriteLine("Search characters by hair color");
-                    getCharactersBy("hair_color");
+                    searchProcess("hair_color");
                     searchMenu();
                     break;
                 case "5":
-                    Console.WriteLine("Search characters by skin color");
-                    getCharactersBy("skin_color");
+                    searchProcess("skin_color");
                     searchMenu();
                     break;
                 case "6":
-                    Console.WriteLine("Search characters by eye color");
-                    getCharactersBy("eye_color");
+                    searchProcess("eye_color");
                     searchMenu();
                     break;
                 case "7":
-                    Console.WriteLine("Search characters by birth year");
-                    getCharactersBy("birth_year");
+                    searchProcess("birth_year");
                     searchMenu();
                     break;
                 case "8":
-                    Console.WriteLine("Search characters by gender");
-                    getCharactersBy("Gender");
+                    searchProcess("Gender");
                     searchMenu();
                     break;
                 case "9":
-                    Console.WriteLine("Search characters by homeworld");
-                    getCharactersBy("Homeworld");
+                    searchProcess("Homeworld");
                     searchMenu();
                     break;
                 case "10":
-                    Console.WriteLine("Search characters by specie");
-                    getCharactersBy("Specie");
+                    searchProcess("Specie");
                     searchMenu();
                     break;
                 case "11":
@@ -202,43 +193,108 @@ namespace LinqProjectIpi
         }
    
 
-        public void getCharactersBy(string criteria)
+        public void getCharactersBy(string criteria, string filter, string search)
         {
             IEnumerable<XElement> characters = Enumerable.Empty<XElement>();
-            Console.WriteLine("What " + criteria + " would you like to search characters by ?");
 
-            if(criteria == "Gender")
+            if (search == "male")
             {
-                Console.WriteLine("Filter by :");
-                Console.WriteLine("1 - male character(s)");
-                Console.WriteLine("2 - female character(s)");
-                switch (Console.ReadLine())
-                {
-                    case "1":
-                        characters = from element in xmlFile.Descendants("character")
-                                     where element.Element("Gender").Value == "male"
-                                     select element;
-                        break;
-                    case "2":
-                        characters = from element in xmlFile.Descendants("character")
-                                     where element.Element("Gender").Value == "female"
-                                     select element;
-                        break;
-                    default:
-                        wrongOptions();
-                        break;
-                }
-            }
+                characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element(filter).Value ascending
+                             where element.Element("Gender").Value == "male"
+                             select element;
+            }else if(search == "female")
+            {
+                characters = from element in xmlFile.Descendants("character")
+                                orderby element.Element(filter).Value ascending
+                                where element.Element("Gender").Value == "female"
+                                select element;
+            }          
             else
             {
-                string search = Console.ReadLine();
                 characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element(filter).Value ascending
                              where element.Element(criteria).Value.Contains(search, StringComparison.InvariantCultureIgnoreCase)
                              select element;
             }
 
             characterOutput(characters);
-            Console.ReadLine();
+            Console.WriteLine("Lets go for another search !");
+            pushEnter();
+        }
+
+        public string characterOrder(string searchBy, string searchValue)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Order your result by :");
+            Console.WriteLine("1 - Name");
+            Console.WriteLine("2 - Height");
+            Console.WriteLine("3 - Mass");
+            Console.WriteLine("4 - Hair");
+            Console.WriteLine("5 - Skin");
+            Console.WriteLine("6 - Eye");
+            Console.WriteLine("7 - Birth Year");
+            Console.WriteLine("8 - Gender");
+            Console.WriteLine("9 - Homeworld");
+            Console.WriteLine("10 - Specie");
+            Console.WriteLine("11 - Return to Star Wars Menu");
+            Console.WriteLine();
+            Console.WriteLine("\r\n Choose an option");
+
+            string orderBy = "";
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    orderBy = "Name";
+                    break;
+                case "2":
+                    orderBy = "Height";
+                    break;
+                case "3":
+                    orderBy = "Mass";
+                    break;
+                case "4":
+                    orderBy = "hair_color";
+                    break;
+                case "5":
+                    orderBy = "skin_color";
+                    break;
+                case "6":
+                    orderBy = "eye_color";
+                    break;
+                case "7":
+                    orderBy = "birth_year";
+                    break;
+                case "8":
+                    orderBy = "Gender";
+                    break;
+                case "9":
+                    orderBy = "Homeworld";
+                    break;
+                case "10":
+                    orderBy = "Specie";
+                    break;
+
+                default:
+                    wrongOptions();
+                    characterOrder(searchBy, searchValue);
+                    break;
+            }
+
+            if(searchBy == orderBy)
+            {
+                Console.WriteLine("You can't order by {0} as you search by {1}", cleanOutput(orderBy), cleanOutput(searchBy));
+                Console.WriteLine("Please specify again what you would like to order your search by");
+                pushEnter();
+                return characterOrder(searchBy, searchValue);
+            }
+            else
+            {
+                Console.WriteLine("You want to search the --{0}-- : {1} ordered by --{2}--", cleanOutput(searchBy), searchValue, cleanOutput(orderBy));
+                confirmSearch();
+                return orderBy;
+            }
         }
 
         public void pushEnter()
@@ -253,6 +309,69 @@ namespace LinqProjectIpi
             Console.WriteLine("Choose from mentionned options only");
             Console.WriteLine("------------------------------------------");
             pushEnter();
+        }
+
+        public void searchProcess(string criteria)
+        {
+            string search = "";
+            Console.WriteLine();
+            if (criteria == "Gender")
+            {
+                Console.WriteLine("Search characters by {0}", cleanOutput(criteria));
+                Console.WriteLine("Choose :");
+                Console.WriteLine("1 - male character(s)");
+                Console.WriteLine("2 - female character(s)");
+                Console.WriteLine();
+                Console.WriteLine("\r\n Choose an option");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        search = "male";
+                        break;
+                    case "2":
+                        search = "female";
+                        break;
+                    default:
+                        wrongOptions();
+                        break;
+                }
+                string order = characterOrder(criteria, search);
+                getCharactersBy(criteria, order, search);
+            }
+            else
+            {
+                Console.WriteLine("Search characters by {0}", cleanOutput(criteria));
+                Console.WriteLine("Which --{0}-- would you like to search for ?", cleanOutput(criteria));
+                search = Console.ReadLine();
+                string order = characterOrder(criteria, search);
+                getCharactersBy(criteria, order, search);
+            }
+        }
+
+        public void confirmSearch()
+        {
+            Console.WriteLine("Do you confirm this research ?");
+            Console.WriteLine("1 - Yes");
+            Console.WriteLine("2 - No");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.WriteLine();
+                    Console.WriteLine("Research Confirmed");
+                    pushEnter();
+                    break;
+                case "2":
+                    Console.WriteLine();
+                    Console.WriteLine("Return to Star Wara main menu :-(");
+                    pushEnter();
+                    searchMenu();
+                    break;
+                default:
+                    wrongOptions();
+                    break;
+            }
+
         }
     }
 }
