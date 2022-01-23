@@ -9,6 +9,7 @@ namespace LinqProjectIpi
     public class StarWarsCharactersHMI{
 
         private XElement xmlFile = XElement.Load($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
+        
 
         public void main(){
             Console.WriteLine(Directory.GetCurrentDirectory());
@@ -49,13 +50,12 @@ namespace LinqProjectIpi
 
                 case "3":
                     Console.WriteLine("Return to main menu");
-                    Console.WriteLine("To do");
+                    //TODO: faire un retour au menu principal
                     break;
 
                 default:
-                    Console.WriteLine("Choose from mentionned options only");
-                    Console.WriteLine("------------------------------------------");
-                    Console.WriteLine();
+                    wrongOptions();
+                    options();
                     break;
                 }
             }
@@ -78,6 +78,7 @@ namespace LinqProjectIpi
                                                   select characters;
 
             characterOutput(allcharacters);
+            pushEnter();
         }
 
         public void characterOutput(IEnumerable<XElement> allcharacters)
@@ -194,9 +195,8 @@ namespace LinqProjectIpi
                     break;
 
                 default:
-                    Console.WriteLine("Choose from mentionned options only");
-                    Console.WriteLine("------------------------------------------");
-                    Console.WriteLine();
+                    wrongOptions();
+                    searchMenu();
                     break;
             }
         }
@@ -216,18 +216,16 @@ namespace LinqProjectIpi
                 {
                     case "1":
                         characters = from element in xmlFile.Descendants("character")
-                                         where element.Element("Gender").Value == "male"
-                                         select element;
+                                     where element.Element("Gender").Value == "male"
+                                     select element;
                         break;
                     case "2":
                         characters = from element in xmlFile.Descendants("character")
-                                         where element.Element("Gender").Value == "female"
-                                         select element;
+                                     where element.Element("Gender").Value == "female"
+                                     select element;
                         break;
                     default:
-                        Console.WriteLine("Choose from mentionned options only");
-                        Console.WriteLine("------------------------------------------");
-                        Console.WriteLine();
+                        wrongOptions();
                         break;
                 }
             }
@@ -235,12 +233,26 @@ namespace LinqProjectIpi
             {
                 string search = Console.ReadLine();
                 characters = from element in xmlFile.Descendants("character")
-                                 where element.Element(criteria).Value.Contains(search, StringComparison.InvariantCultureIgnoreCase)
-                                 select element;
+                             where element.Element(criteria).Value.Contains(search, StringComparison.InvariantCultureIgnoreCase)
+                             select element;
             }
 
             characterOutput(characters);
             Console.ReadLine();
+        }
+
+        public void pushEnter()
+        {
+            Console.WriteLine("Push enter to continue...");
+            Console.ReadLine();
+        }
+
+        public void wrongOptions()
+        {
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine("Choose from mentionned options only");
+            Console.WriteLine("------------------------------------------");
+            pushEnter();
         }
     }
 }

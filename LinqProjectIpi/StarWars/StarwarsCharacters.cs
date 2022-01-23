@@ -9,7 +9,7 @@ namespace LinqProjectIpi
     public class Starwarscharacters
     {
         private XElement xmlFile = XElement.Load($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
-
+        
         public void getAllcharacters()
         {
             var characters = from element in xmlFile.Descendants("character")

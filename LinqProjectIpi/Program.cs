@@ -21,24 +21,24 @@ namespace LinqProjectIpi
         {
             Console.Clear();
             Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
-            Console.WriteLine("Bienvenue sur le projet Linq de Raphaël et Matthieu :-)");
+            Console.WriteLine("Welcome to Raphaël's and Matthieu's  Linq project :-)");
             Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
-            Console.WriteLine("Nous allons vous présenter deux jeux de données :");
+            Console.WriteLine("Here are our two data-sets:");
         }
 
         static string options()
         {
-            Console.WriteLine("Choississez votre option :");
-            Console.WriteLine("1 - Les missions spatiales depuis 1957");
-            Console.WriteLine("2 - Les personnages de l'univers Star Wars");
-            Console.WriteLine("3 - Fin du programme");
+            Console.WriteLine("Choose an option :");
+            Console.WriteLine("1 - Space Missions from 1957");
+            Console.WriteLine("2 - Star Wars Characters");
+            Console.WriteLine("3 - Quit");
             Console.WriteLine();
-            Console.WriteLine("\r\n Choississez une option (1 2 ou 3)");
+            Console.WriteLine("\r\n Choose an option (1,2,3)");
 
             switch (Console.ReadLine())
                 {
                     case "1":                        
-                        Console.WriteLine("Les missions spatiales depuis 1957");
+                        Console.WriteLine("Space Missions from 1957");
                         SpaceMissionHMI hmi = new SpaceMissionHMI();
                         hmi.main();
                         return "space";
@@ -54,7 +54,7 @@ namespace LinqProjectIpi
                         return "exit";
 
                     default:
-                        Console.WriteLine("Choississez une des 3 options uniquement !");
+                        Console.WriteLine("Choose from one on these options only !");
                         Console.WriteLine("------------------------------------------");
                         Console.WriteLine();
 
