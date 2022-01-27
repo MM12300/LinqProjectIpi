@@ -313,6 +313,7 @@ namespace LinqProjectIpi
                         break;
                     default:
                         Hmi.wrongOptions();
+                        searchProcess("gender");
                         break;
                 }
                 string order = characterOrder(criteria, search);
@@ -342,7 +343,7 @@ namespace LinqProjectIpi
                     break;
                 case "2":
                     Console.WriteLine();
-                    Console.WriteLine("Return to Star Wara main menu :-(");
+                    Console.WriteLine("Return to Star Wars main menu :-(");
                     Hmi.pushEnter();
                     searchMenu();
                     break;
