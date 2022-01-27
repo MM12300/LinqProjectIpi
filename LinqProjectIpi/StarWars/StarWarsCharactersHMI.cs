@@ -32,7 +32,7 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - Search Mode");
             Console.WriteLine("3 - Return to main menu");
             Console.WriteLine();
-            Console.WriteLine("\r\n Choose an option (1)");
+            Console.WriteLine("\r\n Choose an option (1,2,3)");
 
             switch (Console.ReadLine())
                 {
