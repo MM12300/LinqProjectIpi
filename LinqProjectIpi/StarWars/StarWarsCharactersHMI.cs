@@ -364,7 +364,7 @@ namespace LinqProjectIpi
                     break;
                 case "2":
                     Console.WriteLine();
-                    Console.WriteLine("Return to Star Wara main menu :-(");
+                    Console.WriteLine("Return to Star Wars main menu :-(");
                     pushEnter();
                     searchMenu();
                     break;
