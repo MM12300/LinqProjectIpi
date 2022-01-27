@@ -334,6 +334,7 @@ namespace LinqProjectIpi
                         break;
                     default:
                         wrongOptions();
+                        searchProcess("gender");
                         break;
                 }
                 string order = characterOrder(criteria, search);
