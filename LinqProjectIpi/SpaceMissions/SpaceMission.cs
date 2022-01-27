@@ -21,10 +21,10 @@ namespace LinqProjectIpi.SpaceMissions
 
         public void missionDetail(){
             Console.WriteLine("==================== Mission Id {0} ====================", this.missionId);
-            Console.WriteLine("Société: {0}", this.companyName);
-            Console.WriteLine("Lanceur: {0}", this.detail);
-            Console.WriteLine("Status de la fusée: {0}", this.statusRocket);
-            Console.WriteLine("Status de la mission: {0}", this.statusMission);
+            Console.WriteLine("Company: {0}", this.companyName);
+            Console.WriteLine("Rocket and payload: {0}", this.detail);
+            Console.WriteLine("Rocket Status: {0}", this.statusRocket);
+            Console.WriteLine("Mission Status: {0}", this.statusMission);
             Console.WriteLine("======================================================", this.missionId);
         }
 

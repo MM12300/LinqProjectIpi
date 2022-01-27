@@ -3,6 +3,7 @@ using System.Linq;
 using System.IO;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using LinqProjectIpi.Utils;
 
 namespace LinqProjectIpi
 {
@@ -13,16 +14,8 @@ namespace LinqProjectIpi
 
         public void main(){
             Console.WriteLine(Directory.GetCurrentDirectory());
-            start();
+            Hmi.showTitle("Star Wars Characters");
             options();
-        }
-
-        void start()
-        {
-            Console.Clear();
-            Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
-            Console.WriteLine("Star Wars Characters");
-            Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
         }
 
         void options()
@@ -55,7 +48,7 @@ namespace LinqProjectIpi
                     break;
 
                 default:
-                    wrongOptions();
+                    Hmi.wrongOptions();
                     options();
                     break;
                 }
@@ -79,7 +72,7 @@ namespace LinqProjectIpi
                                                   select characters;
 
             characterOutput(allcharacters);
-            pushEnter();
+            Hmi.pushEnter();
         }
 
         public void characterOutput(IEnumerable<XElement> allcharacters)
@@ -106,20 +99,20 @@ namespace LinqProjectIpi
 
                     }
                 }
-                output = cleanOutput(output);
+                output = Hmi.cleanOutput(output);
                 Console.WriteLine(output);
                 Console.WriteLine("--");
             }
         }
 
-        public string cleanOutput(string output)
-        {
-            output = output.Replace("skin_color", "Skin Color");
-            output = output.Replace("hair_color", "Hair Color");
-            output = output.Replace("eye_color", "Eye Color");
-            output = output.Replace("birth_year", "Birth Year");
-            return output;
-        }
+        // public string cleanOutput(string output)
+        // {
+        //     output = output.Replace("skin_color", "Skin Color");
+        //     output = output.Replace("hair_color", "Hair Color");
+        //     output = output.Replace("eye_color", "Eye Color");
+        //     output = output.Replace("birth_year", "Birth Year");
+        //     return output;
+        // }
 
         public void searchMenu()
         {
@@ -186,7 +179,7 @@ namespace LinqProjectIpi
                     break;
 
                 default:
-                    wrongOptions();
+                    Hmi.wrongOptions();
                     searchMenu();
                     break;
             }
@@ -220,7 +213,7 @@ namespace LinqProjectIpi
 
             characterOutput(characters);
             Console.WriteLine("Lets go for another search !");
-            pushEnter();
+            Hmi.pushEnter();
         }
 
         public string characterOrder(string searchBy, string searchValue)
@@ -277,38 +270,24 @@ namespace LinqProjectIpi
                     break;
 
                 default:
-                    wrongOptions();
+                    Hmi.wrongOptions();
                     characterOrder(searchBy, searchValue);
                     break;
             }
 
             if(searchBy == orderBy)
             {
-                Console.WriteLine("You can't order by {0} as you search by {1}", cleanOutput(orderBy), cleanOutput(searchBy));
+                Console.WriteLine("You can't order by {0} as you search by {1}", Hmi.cleanOutput(orderBy), Hmi.cleanOutput(searchBy));
                 Console.WriteLine("Please specify again what you would like to order your search by");
-                pushEnter();
+                Hmi.pushEnter();
                 return characterOrder(searchBy, searchValue);
             }
             else
             {
-                Console.WriteLine("You want to search the --{0}-- : {1} ordered by --{2}--", cleanOutput(searchBy), searchValue, cleanOutput(orderBy));
+                Console.WriteLine("You want to search the --{0}-- : {1} ordered by --{2}--", Hmi.cleanOutput(searchBy), searchValue, Hmi.cleanOutput(orderBy));
                 confirmSearch();
                 return orderBy;
             }
-        }
-
-        public void pushEnter()
-        {
-            Console.WriteLine("Push enter to continue...");
-            Console.ReadLine();
-        }
-
-        public void wrongOptions()
-        {
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine("Choose from mentionned options only");
-            Console.WriteLine("------------------------------------------");
-            pushEnter();
         }
 
         public void searchProcess(string criteria)
@@ -317,7 +296,7 @@ namespace LinqProjectIpi
             Console.WriteLine();
             if (criteria == "Gender")
             {
-                Console.WriteLine("Search characters by {0}", cleanOutput(criteria));
+                Console.WriteLine("Search characters by {0}", Hmi.cleanOutput(criteria));
                 Console.WriteLine("Choose :");
                 Console.WriteLine("1 - male character(s)");
                 Console.WriteLine("2 - female character(s)");
@@ -333,7 +312,7 @@ namespace LinqProjectIpi
                         search = "female";
                         break;
                     default:
-                        wrongOptions();
+                        Hmi.wrongOptions();
                         break;
                 }
                 string order = characterOrder(criteria, search);
@@ -341,8 +320,8 @@ namespace LinqProjectIpi
             }
             else
             {
-                Console.WriteLine("Search characters by {0}", cleanOutput(criteria));
-                Console.WriteLine("Which --{0}-- would you like to search for ?", cleanOutput(criteria));
+                Console.WriteLine("Search characters by {0}", Hmi.cleanOutput(criteria));
+                Console.WriteLine("Which --{0}-- would you like to search for ?", Hmi.cleanOutput(criteria));
                 search = Console.ReadLine();
                 string order = characterOrder(criteria, search);
                 getCharactersBy(criteria, order, search);
@@ -359,16 +338,16 @@ namespace LinqProjectIpi
                 case "1":
                     Console.WriteLine();
                     Console.WriteLine("Research Confirmed");
-                    pushEnter();
+                    Hmi.pushEnter();
                     break;
                 case "2":
                     Console.WriteLine();
                     Console.WriteLine("Return to Star Wara main menu :-(");
-                    pushEnter();
+                    Hmi.pushEnter();
                     searchMenu();
                     break;
                 default:
-                    wrongOptions();
+                    Hmi.wrongOptions();
                     break;
             }
 

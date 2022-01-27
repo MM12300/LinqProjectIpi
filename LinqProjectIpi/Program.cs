@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LinqProjectIpi.Utils;
 
 namespace LinqProjectIpi
 {
@@ -20,9 +21,7 @@ namespace LinqProjectIpi
         static void start()
         {
             Console.Clear();
-            Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
-            Console.WriteLine("Welcome to Raphaël's and Matthieu's  Linq project :-)");
-            Console.WriteLine("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
+            Hmi.showTitle("Welcome to Raphaël's and Matthieu's  Linq project :-)");
             Console.WriteLine("Here are our two data-sets:");
         }
 
