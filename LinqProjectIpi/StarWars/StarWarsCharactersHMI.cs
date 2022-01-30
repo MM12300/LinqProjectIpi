@@ -22,7 +22,8 @@ namespace LinqProjectIpi
             Console.WriteLine("Choose an option :");
             Console.WriteLine("1 - All Characters Details");
             Console.WriteLine("2 - Search Mode");
-            Console.WriteLine("3 - Return to main menu");
+            Console.WriteLine("3 - Characters by special traits");
+            Console.WriteLine("4 - Return to main menu");
             Console.WriteLine();
             Console.WriteLine("\r\n Choose an option (1,2,3)");
 
@@ -42,6 +43,13 @@ namespace LinqProjectIpi
                     break;
 
                 case "3":
+                    Console.WriteLine();
+                    Console.WriteLine("Search characters with special traits");
+                    specialTraits();
+                    main();
+                    break;
+
+                case "4":
                     Console.WriteLine("Return to main menu");
                     //TODO: faire un retour au menu principal
                     break;
@@ -164,7 +172,6 @@ namespace LinqProjectIpi
                     searchMenu();
                     break;
                 case "11":
-                    Console.WriteLine("'Return to main menu");
                     main();
                     break;
 
@@ -220,7 +227,6 @@ namespace LinqProjectIpi
             Console.WriteLine("8 - Gender");
             Console.WriteLine("9 - Homeworld");
             Console.WriteLine("10 - Specie");
-            Console.WriteLine("11 - Return to Star Wars Menu");
             Console.WriteLine();
             Console.WriteLine("\r\n Choose an option");
 
@@ -258,7 +264,6 @@ namespace LinqProjectIpi
                 case "10":
                     orderBy = "Specie";
                     break;
-
                 default:
                     Hmi.wrongOptions();
                     characterOrder(searchBy, searchValue);
@@ -341,7 +346,88 @@ namespace LinqProjectIpi
                     Hmi.wrongOptions();
                     break;
             }
+        }
 
+        public void specialTraits()
+        {
+            Console.WriteLine("Which characters special traits would you like to explore ?");
+            Console.WriteLine("1 - The giants : size >= 190cm");
+            Console.WriteLine("2 - The midgets : size <= 120cm");
+            Console.WriteLine("3 - The light-ones : mass <= 50kg");
+            Console.WriteLine("4 - The big-ones : size >= 150kg");
+            Console.WriteLine("5 - The elders : age >= 100 years old");
+            Console.WriteLine("6 - Return to Star Wars menu");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    getCharactersBySpecialTraits("giants");
+                    specialTraits();
+                    break;
+                case "2":
+                    getCharactersBySpecialTraits("midgets");
+                    specialTraits();
+                    break;
+                case "3":
+                    getCharactersBySpecialTraits("light");
+                    specialTraits();
+                    break;
+                case "4":
+                    getCharactersBySpecialTraits("heavy");
+                    specialTraits();
+                    break;
+                case "5":
+                    getCharactersBySpecialTraits("old");
+                    specialTraits();
+                    break;
+                case "6":
+                    main();
+                    break;
+                default:
+                    Hmi.wrongOptions();
+                    break;
+            }
+        }
+
+        public void getCharactersBySpecialTraits(string trait)
+        {
+            IEnumerable<XElement> characters = Enumerable.Empty<XElement>();
+            if (trait == "giants")
+            {
+                characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element("Name").Value ascending
+                             where element.Element("Height").Value != "NA" && int.Parse(element.Element("Height").Value) >= 200
+                             select element;
+            }else if (trait == "midgets")
+            {
+                characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element("Name").Value ascending
+                             where element.Element("Height").Value != "NA" && int.Parse(element.Element("Height").Value) <= 120
+                             select element;
+            }
+            else if (trait == "light")
+            {
+                characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element("Name").Value ascending
+                             where element.Element("Mass").Value != "NA" && int.Parse(element.Element("Mass").Value) <= 50
+                             select element;
+            }
+            else if (trait == "heavy")
+            {
+                characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element("Name").Value ascending
+                             where element.Element("Mass").Value != "NA" && int.Parse(element.Element("Mass").Value) >= 100
+                             select element;
+            }
+            else if (trait == "old")
+            {
+                characters = from element in xmlFile.Descendants("character")
+                             orderby element.Element("Name").Value ascending
+                             where element.Element("birth_year").Value != "NA" && int.Parse(element.Element("birth_year").Value) >= 100
+                             select element;
+            }
+
+            characterOutput(characters);
+            Hmi.pushEnter();
         }
     }
 }

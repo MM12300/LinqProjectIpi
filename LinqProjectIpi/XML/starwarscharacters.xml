@@ -1,32 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <root>
-	<characters>
-		
-	</characters>
-  <character>
-    <Name>Luke Skywalker</Name>
-    <Height>172</Height>
-    <Mass>77</Mass>
-    <hair_color>blond</hair_color>
-    <skin_color>fair</skin_color>
-    <eye_color>blue</eye_color>
-    <birth_year>19BBY</birth_year>
-    <Gender>male</Gender>
-    <Homeworld>Tatooine</Homeworld>
-    <Specie>Human</Specie>
-  </character>
-	<character>
-    <Name>C-3PO</Name>
-    <Height>167</Height>
-    <Mass>75</Mass>
-    <hair_color>NA</hair_color>
-    <skin_color>gold</skin_color>
-    <eye_color>yellow</eye_color>
-    <birth_year>112BBY</birth_year>
-    <Gender>NA</Gender>
-    <Homeworld>Tatooine</Homeworld>
-    <Specie>Droid</Specie>
-  </character>
 	<character>
     <Name>R2-D2</Name>
     <Height>96</Height>
@@ -34,7 +7,7 @@
     <hair_color>NA</hair_color>
     <skin_color>white, blue</skin_color>
     <eye_color>red</eye_color>
-    <birth_year>33BBY</birth_year>
+    <birth_year>330</birth_year>
     <Gender>NA</Gender>
     <Homeworld>Naboo</Homeworld>
     <Specie>Droid</Specie>
@@ -46,7 +19,7 @@
     <hair_color>none</hair_color>
     <skin_color>white</skin_color>
     <eye_color>yellow</eye_color>
-    <birth_year>41.9BBY</birth_year>
+    <birth_year>41</birth_year>
     <Gender>male</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -58,7 +31,7 @@
     <hair_color>brown</hair_color>
     <skin_color>light</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>19BBY</birth_year>
+    <birth_year>190</birth_year>
     <Gender>female</Gender>
     <Homeworld>Alderaan</Homeworld>
     <Specie>Human</Specie>
@@ -70,7 +43,7 @@
     <hair_color>brown, grey</hair_color>
     <skin_color>light</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>52BBY</birth_year>
+    <birth_year>520</birth_year>
     <Gender>male</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -82,7 +55,7 @@
     <hair_color>brown</hair_color>
     <skin_color>light</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>47BBY</birth_year>
+    <birth_year>470</birth_year>
     <Gender>female</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -106,7 +79,7 @@
     <hair_color>black</hair_color>
     <skin_color>light</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>24BBY</birth_year>
+    <birth_year>240</birth_year>
     <Gender>male</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -118,7 +91,7 @@
     <hair_color>auburn, white</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue-gray</eye_color>
-    <birth_year>57BBY</birth_year>
+    <birth_year>570</birth_year>
     <Gender>male</Gender>
     <Homeworld>Stewjon</Homeworld>
     <Specie>Human</Specie>
@@ -130,7 +103,7 @@
     <hair_color>blond</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>41.9BBY</birth_year>
+    <birth_year>42</birth_year>
     <Gender>male</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -142,7 +115,7 @@
     <hair_color>auburn, grey</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>64BBY</birth_year>
+    <birth_year>640</birth_year>
     <Gender>male</Gender>
     <Homeworld>Eriadu</Homeworld>
     <Specie>Human</Specie>
@@ -154,7 +127,7 @@
     <hair_color>brown</hair_color>
     <skin_color>NA</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>200BBY</birth_year>
+    <birth_year>2000</birth_year>
     <Gender>male</Gender>
     <Homeworld>Kashyyyk</Homeworld>
     <Specie>Wookiee</Specie>
@@ -166,7 +139,7 @@
     <hair_color>brown</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>29BBY</birth_year>
+    <birth_year>290</birth_year>
     <Gender>male</Gender>
     <Homeworld>Corellia</Homeworld>
     <Specie>Human</Specie>
@@ -178,7 +151,7 @@
     <hair_color>NA</hair_color>
     <skin_color>green</skin_color>
     <eye_color>black</eye_color>
-    <birth_year>44BBY</birth_year>
+    <birth_year>440</birth_year>
     <Gender>male</Gender>
     <Homeworld>Rodia</Homeworld>
     <Specie>Rodian</Specie>
@@ -186,11 +159,11 @@
   <character>
     <Name>Jabba Desilijic Tiure</Name>
     <Height>175</Height>
-    <Mass>1,358</Mass>
+    <Mass>1358</Mass>
     <hair_color>NA</hair_color>
     <skin_color>green-tan, brown</skin_color>
     <eye_color>orange</eye_color>
-    <birth_year>600BBY</birth_year>
+    <birth_year>6000</birth_year>
     <Gender>hermaphrodite</Gender>
     <Homeworld>Nal Hutta</Homeworld>
     <Specie>Hutt</Specie>
@@ -202,7 +175,7 @@
     <hair_color>brown</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>hazel</eye_color>
-    <birth_year>21BBY</birth_year>
+    <birth_year>210</birth_year>
     <Gender>male</Gender>
     <Homeworld>Corellia</Homeworld>
     <Specie>Human</Specie>
@@ -226,7 +199,7 @@
     <hair_color>white</hair_color>
     <skin_color>green</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>896BBY</birth_year>
+    <birth_year>8960</birth_year>
     <Gender>male</Gender>
     <Homeworld>NA</Homeworld>
     <Specie>Yoda's Specie</Specie>
@@ -238,7 +211,7 @@
     <hair_color>grey</hair_color>
     <skin_color>pale</skin_color>
     <eye_color>yellow</eye_color>
-    <birth_year>82BBY</birth_year>
+    <birth_year>820</birth_year>
     <Gender>male</Gender>
     <Homeworld>Naboo</Homeworld>
     <Specie>Human</Specie>
@@ -246,11 +219,11 @@
   <character>
     <Name>Boba Fett</Name>
     <Height>183</Height>
-    <Mass>78.2</Mass>
+    <Mass>78</Mass>
     <hair_color>black</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>31.5BBY</birth_year>
+    <birth_year>31</birth_year>
     <Gender>male</Gender>
     <Homeworld>Kamino</Homeworld>
     <Specie>Human</Specie>
@@ -262,7 +235,7 @@
     <hair_color>none</hair_color>
     <skin_color>metal</skin_color>
     <eye_color>red</eye_color>
-    <birth_year>15BBY</birth_year>
+    <birth_year>150</birth_year>
     <Gender>none</Gender>
     <Homeworld>NA</Homeworld>
     <Specie>Droid</Specie>
@@ -274,7 +247,7 @@
     <hair_color>none</hair_color>
     <skin_color>green</skin_color>
     <eye_color>red</eye_color>
-    <birth_year>53BBY</birth_year>
+    <birth_year>530</birth_year>
     <Gender>male</Gender>
     <Homeworld>Trandosha</Homeworld>
     <Specie>Trandoshan</Specie>
@@ -286,7 +259,7 @@
     <hair_color>black</hair_color>
     <skin_color>dark</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>31BBY</birth_year>
+    <birth_year>310</birth_year>
     <Gender>male</Gender>
     <Homeworld>Socorro</Homeworld>
     <Specie>Human</Specie>
@@ -298,7 +271,7 @@
     <hair_color>none</hair_color>
     <skin_color>light</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>37BBY</birth_year>
+    <birth_year>370</birth_year>
     <Gender>male</Gender>
     <Homeworld>Bespin</Homeworld>
     <Specie>Human</Specie>
@@ -310,7 +283,7 @@
     <hair_color>none</hair_color>
     <skin_color>brown mottle</skin_color>
     <eye_color>orange</eye_color>
-    <birth_year>41BBY</birth_year>
+    <birth_year>410</birth_year>
     <Gender>male</Gender>
     <Homeworld>Mon Cala</Homeworld>
     <Specie>Mon Calamari</Specie>
@@ -322,7 +295,7 @@
     <hair_color>auburn</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>48BBY</birth_year>
+    <birth_year>480</birth_year>
     <Gender>female</Gender>
     <Homeworld>Chandrila</Homeworld>
     <Specie>Human</Specie>
@@ -346,7 +319,7 @@
     <hair_color>brown</hair_color>
     <skin_color>brown</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>8BBY</birth_year>
+    <birth_year>80</birth_year>
     <Gender>male</Gender>
     <Homeworld>Endor</Homeworld>
     <Specie>Ewok</Specie>
@@ -370,7 +343,7 @@
     <hair_color>brown</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>92BBY</birth_year>
+    <birth_year>920</birth_year>
     <Gender>male</Gender>
     <Homeworld>NA</Homeworld>
     <Specie>Human</Specie>
@@ -394,7 +367,7 @@
     <hair_color>blond</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>91BBY</birth_year>
+    <birth_year>910</birth_year>
     <Gender>male</Gender>
     <Homeworld>Coruscant</Homeworld>
     <Specie>Human</Specie>
@@ -406,7 +379,7 @@
     <hair_color>none</hair_color>
     <skin_color>orange</skin_color>
     <eye_color>orange</eye_color>
-    <birth_year>52BBY</birth_year>
+    <birth_year>520</birth_year>
     <Gender>male</Gender>
     <Homeworld>Naboo</Homeworld>
     <Specie>Gungan</Specie>
@@ -478,7 +451,7 @@
     <hair_color>black</hair_color>
     <skin_color>dark</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>62BBY</birth_year>
+    <birth_year>620</birth_year>
     <Gender>male</Gender>
     <Homeworld>Naboo</Homeworld>
     <Specie>NA</Specie>
@@ -490,7 +463,7 @@
     <hair_color>black</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>72BBY</birth_year>
+    <birth_year>720</birth_year>
     <Gender>female</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -502,7 +475,7 @@
     <hair_color>none</hair_color>
     <skin_color>red</skin_color>
     <eye_color>yellow</eye_color>
-    <birth_year>54BBY</birth_year>
+    <birth_year>540</birth_year>
     <Gender>male</Gender>
     <Homeworld>Dathomir</Homeworld>
     <Specie>Zabrak</Specie>
@@ -526,7 +499,7 @@
     <hair_color>none</hair_color>
     <skin_color>blue</skin_color>
     <eye_color>hazel</eye_color>
-    <birth_year>48BBY</birth_year>
+    <birth_year>480</birth_year>
     <Gender>female</Gender>
     <Homeworld>Ryloth</Homeworld>
     <Specie>Twi'lek</Specie>
@@ -574,7 +547,7 @@
     <hair_color>none</hair_color>
     <skin_color>dark</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>72BBY</birth_year>
+    <birth_year>720</birth_year>
     <Gender>male</Gender>
     <Homeworld>Haruun Kal</Homeworld>
     <Specie>Human</Specie>
@@ -586,7 +559,7 @@
     <hair_color>white</hair_color>
     <skin_color>pale</skin_color>
     <eye_color>yellow</eye_color>
-    <birth_year>92BBY</birth_year>
+    <birth_year>920</birth_year>
     <Gender>male</Gender>
     <Homeworld>Cerea</Homeworld>
     <Specie>Cerean</Specie>
@@ -658,7 +631,7 @@
     <hair_color>none</hair_color>
     <skin_color>orange</skin_color>
     <eye_color>black</eye_color>
-    <birth_year>22BBY</birth_year>
+    <birth_year>220</birth_year>
     <Gender>male</Gender>
     <Homeworld>Dorin</Homeworld>
     <Specie>Kel Dor</Specie>
@@ -706,7 +679,7 @@
     <hair_color>brown</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>82BBY</birth_year>
+    <birth_year>820</birth_year>
     <Gender>male</Gender>
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
@@ -726,11 +699,11 @@
   <character>
     <Name>Luminara Unduli</Name>
     <Height>170</Height>
-    <Mass>56.2</Mass>
+    <Mass>56</Mass>
     <hair_color>black</hair_color>
     <skin_color>yellow</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>58BBY</birth_year>
+    <birth_year>580</birth_year>
     <Gender>female</Gender>
     <Homeworld>Mirial</Homeworld>
     <Specie>Mirialan</Specie>
@@ -742,7 +715,7 @@
     <hair_color>black</hair_color>
     <skin_color>yellow</skin_color>
     <eye_color>blue</eye_color>
-    <birth_year>40BBY</birth_year>
+    <birth_year>400</birth_year>
     <Gender>female</Gender>
     <Homeworld>Mirial</Homeworld>
     <Specie>Mirialan</Specie>
@@ -766,7 +739,7 @@
     <hair_color>white</hair_color>
     <skin_color>fair</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>102BBY</birth_year>
+    <birth_year>1020</birth_year>
     <Gender>male</Gender>
     <Homeworld>Serenno</Homeworld>
     <Specie>Human</Specie>
@@ -778,7 +751,7 @@
     <hair_color>black</hair_color>
     <skin_color>tan</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>67BBY</birth_year>
+    <birth_year>670</birth_year>
     <Gender>male</Gender>
     <Homeworld>Alderaan</Homeworld>
     <Specie>Human</Specie>
@@ -790,7 +763,7 @@
     <hair_color>black</hair_color>
     <skin_color>tan</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>66BBY</birth_year>
+    <birth_year>660</birth_year>
     <Gender>male</Gender>
     <Homeworld>Concord Dawn</Homeworld>
     <Specie>Human</Specie>
@@ -1042,7 +1015,7 @@
     <hair_color>brown</hair_color>
     <skin_color>light</skin_color>
     <eye_color>brown</eye_color>
-    <birth_year>46BBY</birth_year>
+    <birth_year>460</birth_year>
     <Gender>female</Gender>
     <Homeworld>Naboo</Homeworld>
     <Specie>Human</Specie>
