@@ -10,7 +10,6 @@ namespace LinqProjectIpi
     public class StarWarsCharactersHMI{
 
         private XElement xmlFile = XElement.Load($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
-        
 
         public void main(){
             Console.WriteLine(Directory.GetCurrentDirectory());
@@ -104,15 +103,6 @@ namespace LinqProjectIpi
                 Console.WriteLine("--");
             }
         }
-
-        // public string cleanOutput(string output)
-        // {
-        //     output = output.Replace("skin_color", "Skin Color");
-        //     output = output.Replace("hair_color", "Hair Color");
-        //     output = output.Replace("eye_color", "Eye Color");
-        //     output = output.Replace("birth_year", "Birth Year");
-        //     return output;
-        // }
 
         public void searchMenu()
         {

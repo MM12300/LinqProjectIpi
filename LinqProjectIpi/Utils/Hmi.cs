@@ -42,7 +42,6 @@ namespace LinqProjectIpi.Utils
 
         private static string toPascalCase(string input){
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower()); 
-            
         }
         
     }
