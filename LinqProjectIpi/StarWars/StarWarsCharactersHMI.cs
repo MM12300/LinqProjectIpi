@@ -84,32 +84,40 @@ namespace LinqProjectIpi
 
         public void characterOutput(IEnumerable<XElement> allcharacters)
         {
-            foreach (XElement character in allcharacters)
+            string output = "";
+            if (allcharacters.Any() && allcharacters != null )
             {
-                string output = "";
-                foreach (var element in character.Elements())
+                foreach (XElement character in allcharacters)
                 {
-                    if (element.Value != "none" && element.Value != "NA")
+                    foreach (var element in character.Elements())
                     {
-                        if(element.Name == "Height")
+                        if (element.Value != "none" && element.Value != "NA")
                         {
-                            output += element.Name + " : " + element.Value + "cm" + "\r\n";
+                            if (element.Name == "Height")
+                            {
+                                output += element.Name + " : " + element.Value + "cm" + "\r\n";
+                            }
+                            else if (element.Name == "Mass")
+                            {
+                                output += element.Name + " : " + element.Value + "kg" + "\r\n";
+                            }
+                            else
+                            {
+                                output += element.Name + " : " + element.Value + "\r\n";
+                            }
                         }
-                        else if(element.Name == "Mass")
-                        {
-                            output += element.Name + " : " + element.Value + "kg" + "\r\n";
-                        }
-                        else
-                        {
-                            output += element.Name + " : " + element.Value + "\r\n";
-                        }
-
                     }
                 }
-                output = Hmi.cleanOutput(output);
-                Console.WriteLine(output);
-                Console.WriteLine("--");
             }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                output = "No Results";
+            }
+            output = Hmi.cleanOutput(output);
+            Console.WriteLine(output);
+            Console.ResetColor();
+            Console.WriteLine("--");
         }
 
         public void searchMenu()
