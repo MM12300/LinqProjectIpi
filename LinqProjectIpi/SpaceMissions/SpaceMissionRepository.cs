@@ -6,8 +6,7 @@ using System.IO;
 using LinqProjectIpi.Utils;
 using System.Text;
 using Newtonsoft.Json;
-using System.Linq.Expressions;
-using System.Threading;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace LinqProjectIpi.SpaceMissions
 {
@@ -135,14 +134,6 @@ namespace LinqProjectIpi.SpaceMissions
         }
 
 
-        public int fetchLastId(){
-            var jsonSerializerSettings = new JsonSerializerSettings();
-            jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
-
-            var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
-            return list.Last().missionId;
-            
-        }
 
         public IEnumerable<SpaceMission> orderBy(IEnumerable<SpaceMission> missions){
             string order;
@@ -189,10 +180,10 @@ namespace LinqProjectIpi.SpaceMissions
                 case "3":
                     order = selectOrder();
                     if(order == "Ascending"){
-                        return missions.OrderBy(x => x.date);
+                        return missions.OrderBy(x => x.datum);
                     }
                     else if (order == "Descending"){
-                        return missions.OrderBy(x => x.date).Reverse();
+                        return missions.OrderBy(x => x.datum).Reverse();
                     }
                     else{
                         Hmi.wrongOptions();
@@ -261,11 +252,11 @@ namespace LinqProjectIpi.SpaceMissions
             var missions = from mission in missionCollection["AllMissions"]
                 select new SpaceMission(Convert.ToInt16(mission[""]), 
                             mission["Company Name"].ToString(), 
-                            mission["Detail"].ToString(), 
-                            mission["Status Rocket"].ToString(), 
-                            mission["Status Mission"].ToString(),
-                            mission["Datum"].ToString(),
-                            mission["Location"].ToString());
+                            mission["Location"].ToString(), 
+                            mission["Datum"].ToString(), 
+                            mission["Detail"].ToString(),
+                            mission["Status Rocket"].ToString(),
+                            mission["Status Mission"].ToString());
 
             return missions;
         }
@@ -274,12 +265,12 @@ namespace LinqProjectIpi.SpaceMissions
             var elements = from element in missionCollection[collectionName]
                 where element[fieldName].ToString().Contains(research, StringComparison.InvariantCultureIgnoreCase)
                 select new SpaceMission(Convert.ToInt16(element[""]), 
-                                        element["Company Name"].ToString(), 
-                                        element["Detail"].ToString(), 
-                                        element["Status Rocket"].ToString(), 
-                                        element["Status Mission"].ToString(),
-                                        element["Datum"].ToString(),
-                                        element["Location"].ToString());
+                            element["Company Name"].ToString(), 
+                            element["Location"].ToString(), 
+                            element["Datum"].ToString(), 
+                            element["Detail"].ToString(),
+                            element["Status Rocket"].ToString(),
+                            element["Status Mission"].ToString());
             return elements;
         }
 
@@ -288,32 +279,49 @@ namespace LinqProjectIpi.SpaceMissions
                 where element[firstParam].ToString().Contains(firstParam, StringComparison.InvariantCultureIgnoreCase) && 
                         element[secondFieldName].ToString().Contains(secondParam, StringComparison.InvariantCultureIgnoreCase)
                 select new SpaceMission(Convert.ToInt16(element[""]), 
-                                        element["Company Name"].ToString(), 
-                                        element["Detail"].ToString(), 
-                                        element["Status Rocket"].ToString(), 
-                                        element["Status Mission"].ToString(),
-                                        element["Datum"].ToString(),
-                                        element["Location"].ToString());
+                            element["Company Name"].ToString(), 
+                            element["Location"].ToString(), 
+                            element["Datum"].ToString(), 
+                            element["Detail"].ToString(),
+                            element["Status Rocket"].ToString(),
+                            element["Status Mission"].ToString());
             return elements;
         }
 
         public void searchUsingGroupBy(){}
 
-        //orderby element.Element("Name").Value ascending
-        public IEnumerable<SpaceMission> searchByYearRequest(int year){
-            var elements = from element in missionCollection[collectionName]
+//orderby element.Element("Name").Value ascending
+        public IEnumerable<SpaceMission> searchByYearRequest(int year, string choice){
+            
 
+            if(choice == "After"){
+                var elements = from element in missionCollection[collectionName]
                 where Misc.parseRFC1123Date(element["Datum"].ToString()).Year > year
                 select new SpaceMission(Convert.ToInt16(element[""]), 
-                                        element["Company Name"].ToString(), 
-                                        element["Detail"].ToString(), 
-                                        element["Status Rocket"].ToString(), 
-                                        element["Status Mission"].ToString(),
-                                        element["Datum"].ToString(),
-                                        element["Location"].ToString());
+                            element["Company Name"].ToString(), 
+                            element["Location"].ToString(), 
+                            element["Datum"].ToString(), 
+                            element["Detail"].ToString(),
+                            element["Status Rocket"].ToString(),
+                            element["Status Mission"].ToString());
+                
+                return elements;
+            }
+            else if(choice == "Before"){
+                var elements = from element in missionCollection[collectionName]
+                where Misc.parseRFC1123Date(element["Datum"].ToString()).Year < year
+                select new SpaceMission(Convert.ToInt16(element[""]), 
+                            element["Company Name"].ToString(), 
+                            element["Location"].ToString(), 
+                            element["Datum"].ToString(), 
+                            element["Detail"].ToString(),
+                            element["Status Rocket"].ToString(),
+                            element["Status Mission"].ToString());
+                
+                return elements;
+            }
 
-
-            return elements;
+            return null;
 
         }
 
@@ -329,18 +337,31 @@ namespace LinqProjectIpi.SpaceMissions
                 mission.missionDetail();
             }
             Hmi.pushEnter();
-        }
+        }    
 
-
-        public void addMission(SpaceMission mission){
+        public int fetchLastId(){
             var jsonSerializerSettings = new JsonSerializerSettings();
             jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
 
             var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
-            list.Add(mission);
-            var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+            return list.Last().missionId;
 
-            File.WriteAllText(@"./JSON/spacemission.json", convertedJson);
+        }
+
+        public void addMission(SpaceMission mission){
+            var jsonSerializerSettings = new JsonSerializerSettings();
+            jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
+            //jsonSerializerSettings.Formatting = Formatting.Indented;
+
+            var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
+            list.Add(mission);
+            var convertedJson = JsonConvert.SerializeObject(list, Formatting.None);
+            // SpaceMissionList finalList = new SpaceMissionList();
+            // finalList.setAllMissions(list);
+            //var baseJsonObject = new JObject(new JProperty("AllMissions",convertedJson.Replace("\\n    \\","")));
+            
+            var finalJson = "{\"AllMissions\":" + convertedJson.ToString() + "}";
+            File.WriteAllText(@"./JSON/spacemission.json", finalJson);
         }    
     }
 }
