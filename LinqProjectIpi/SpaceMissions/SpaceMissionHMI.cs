@@ -17,22 +17,38 @@ namespace LinqProjectIpi
 
 
         public void main(){
-            Hmi.showTitle(title);
+            //Hmi.showTitle(title);
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Hmi.centeredOutput("███████╗██████╗  █████╗  ██████╗███████╗    ███╗   ███╗██╗███████╗███████╗██╗ ██████╗ ███╗   ██╗███████╗");
+            Hmi.centeredOutput("██╔════╝██╔══██╗██╔══██╗██╔════╝██╔════╝    ████╗ ████║██║██╔════╝██╔════╝██║██╔═══██╗████╗  ██║██╔════╝");
+            Hmi.centeredOutput("███████╗██████╔╝███████║██║     █████╗      ██╔████╔██║██║███████╗███████╗██║██║   ██║██╔██╗ ██║███████╗");
+            Hmi.centeredOutput("╚════██║██╔═══╝ ██╔══██║██║     ██╔══╝      ██║╚██╔╝██║██║╚════██║╚════██║██║██║   ██║██║╚██╗██║╚════██║");
+            Hmi.centeredOutput("███████║██║     ██║  ██║╚██████╗███████╗    ██║ ╚═╝ ██║██║███████║███████║██║╚██████╔╝██║ ╚████║███████║");
+            Hmi.centeredOutput("╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝     ╚═╝╚═╝╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+
             options();
         }
 
         void options()
         {
             Console.WriteLine("Available options: :");
-            Console.WriteLine("1 - List all space missions");
+            Console.WriteLine("1 - All space missions");
             Console.WriteLine("2 - Research");
             Console.WriteLine("3 - Add Mission");
             Console.WriteLine("4 - Convert Json Dataset into XML");
 
 
-            Console.WriteLine("5 - Return");
+            Console.WriteLine("5 - Return to main menu");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\r\n Choose an option");
+            Console.ResetColor();
 
             switch (Console.ReadLine())
                 {
@@ -57,8 +73,8 @@ namespace LinqProjectIpi
                         break;
                     
                     case "5":
-                        main();
-                        break;
+                        Hmi.main();
+                        return;
 
 
 
@@ -70,6 +86,9 @@ namespace LinqProjectIpi
 
 
         public void addMissionMenu(){
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("Add a new space mission:");
+            Console.ResetColor();
             //Fetch last id
             int missionId = repo.fetchLastId();
             Console.WriteLine("Enter a company name:");
@@ -106,10 +125,12 @@ namespace LinqProjectIpi
 
         public void searchByYear(){
             IEnumerable<SpaceMission> missions;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Select a year to retrieve the associated missions ...");
             //CHoix de l'utilisateur pour l'année
             var year = Console.ReadLine();
             Console.WriteLine("Would you like to select missions before or after your selected year ?");
+            Console.ResetColor();
             Console.WriteLine("1) After");
             Console.WriteLine("2) Before");
 
@@ -142,7 +163,9 @@ namespace LinqProjectIpi
 
             void searchProcess(){
                 Hmi.centeredOutput("Search Menu");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Choose your option :");
+                Console.ResetColor();
                 Console.WriteLine("1 - Simple search");
                 Console.WriteLine("2 - Advanced search");
                 Console.WriteLine("3 - Return");
@@ -177,8 +200,9 @@ namespace LinqProjectIpi
 
             void simpleSearch(){
                 Hmi.centeredOutput("Simple search");
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Characteristics");
-
+                Console.ResetColor();
                 Console.WriteLine("1 - Company name");
                 Console.WriteLine("2 - Location");
                 Console.WriteLine("3 - Year");

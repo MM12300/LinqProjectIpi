@@ -17,7 +17,9 @@ namespace LinqProjectIpi.SpaceMissions
         private String collectionName = "AllMissions";
         
         public void getAllMissions(){
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Hmi.centeredOutput("All missions since 1957:");
+            Console.ResetColor();
             //Requête
             var missions = selectMissions();
             //Affichage
@@ -52,7 +54,9 @@ namespace LinqProjectIpi.SpaceMissions
         public void searchByLocation(){
             //Affichage de la liste des pays
             getCountries();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Enter the location to retrieve the associated missions ...");
+            Console.ResetColor();
             //CHoix de l'utilisateur pour le pays
             var userInput = Console.ReadLine();
             //Récupération des missions
@@ -66,7 +70,9 @@ namespace LinqProjectIpi.SpaceMissions
         public void searchByCompany(){
             //Affichage de la liste des sociétés
             getCompanies();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Enter the company's name to retrieve the associated missions ...");
+            Console.ResetColor();
             //CHoix de l'utilisateur pour la société
             var userInput = Console.ReadLine();
             //Récupération des missions
@@ -79,7 +85,9 @@ namespace LinqProjectIpi.SpaceMissions
 
         public void searchByRocketStatus(){
             IEnumerable<SpaceMission> missions;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Select the rocket status to retrieve the associated missions ...");
+            Console.ResetColor();
             Console.WriteLine("1) Active");
             Console.WriteLine("2) Retired");
             var userInput = Console.ReadLine();
@@ -107,7 +115,9 @@ namespace LinqProjectIpi.SpaceMissions
 
         public void searchByMissionStatus(){
             IEnumerable<SpaceMission> missions;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Select the mission status to retrieve the associated missions ...");
+            Console.ResetColor();
             Console.WriteLine("1) Success");
             Console.WriteLine("2) Failure");
             var userInput = Console.ReadLine();
@@ -137,7 +147,9 @@ namespace LinqProjectIpi.SpaceMissions
 
         public IEnumerable<SpaceMission> orderBy(IEnumerable<SpaceMission> missions){
             string order;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("By which field would you like to order the list ?");
+            Console.ResetColor();
             Console.WriteLine("1) Order by company name");
             Console.WriteLine("2) Order by location");
             Console.WriteLine("3) Order by year");
@@ -224,7 +236,9 @@ namespace LinqProjectIpi.SpaceMissions
         }
 
         private string selectOrder(){
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Select order type:");
+            Console.ResetColor();
             Console.WriteLine("1) Ascending");
             Console.WriteLine("2) Descending");
             var option = Console.ReadLine();
@@ -326,8 +340,10 @@ namespace LinqProjectIpi.SpaceMissions
         }
 
         public void cappedChoice(List<SpaceMission> missionList){
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("I've found {0} missions", missionList.Count());
             Console.WriteLine("How many of them do you want to display ?");
+            Console.ResetColor();
             var userInput = Convert.ToInt16(Console.ReadLine());
 
             for(int i = 0; i < userInput; i++){

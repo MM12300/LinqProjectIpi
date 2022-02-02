@@ -44,6 +44,68 @@ namespace LinqProjectIpi.Utils
         private static string toPascalCase(string input){
             return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input.ToLower()); 
         }
+
+
+        public static void main(){
+            Hmi.start();
+            string option = Hmi.options();
+            Console.WriteLine(option);
+            Console.ReadLine();
+        }
+
+        public static void start()
+        {
+            Console.Clear();
+            Hmi.showTitle("Welcome to Raphaël's and Matthieu's project :-)");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            centeredOutput("                            :::           :::::::::::          ::::    :::          ::::::::                      ");
+            centeredOutput("                           :+:               :+:              :+:+:   :+:         :+:    :+:                      ");
+            centeredOutput("                          +:+               +:+              :+:+:+  +:+         +:+    +:+                       ");
+            centeredOutput("   +#++:++#++:++         +#+               +#+              +#+ +:+ +#+         +#+    +:+        +#++:++#++:++   ");
+            centeredOutput("                        +#+               +#+              +#+  +#+#+#         +#+    +#+                         ");
+            centeredOutput("                       #+#               #+#              #+#   #+#+#         #+#    #+##                         ");
+            centeredOutput("                      ##########    ###########          ###    ####          ##############                      ");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Here are our two data-sets:");
+        }
+
+        public static string options()
+        {
+            Console.WriteLine("Choose an option :");
+            Console.WriteLine("1 - Space Missions since 1957");
+            Console.WriteLine("2 - Star Wars Characters");
+            Console.WriteLine("3 - Quit");
+            Console.WriteLine();
+            Console.WriteLine("\r\n Choose an option (1,2,3)");
+
+            switch (Console.ReadLine())
+                {
+                    case "1":                        
+                        SpaceMissionHMI hmi = new SpaceMissionHMI();
+                        hmi.main();
+                        return "space";
+
+                    case "2":
+                        StarWarsCharactersHMI starwarscharactersHMI = new StarWarsCharactersHMI();
+                        starwarscharactersHMI.main();
+                        return "starwars";
+
+                    case "3":
+                        Console.WriteLine("Exiting the program...");
+                        return "exit";
+
+                    default:
+                        Console.WriteLine("Choose from one on these options only !");
+                        Console.WriteLine("------------------------------------------");
+                        Console.WriteLine();
+
+                        return options();
+                }
+            }
         
     }
 }

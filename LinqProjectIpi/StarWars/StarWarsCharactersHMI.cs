@@ -15,16 +15,16 @@ namespace LinqProjectIpi
         // Main method containing options menu
         public void main(){
             Console.WriteLine(Directory.GetCurrentDirectory());
-            Hmi.showTitle("Star Wars Characters");
+            Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("                    ███████╗████████╗ █████╗ ██████╗     ██╗    ██╗ █████╗ ██████╗ ███████");
-            Console.WriteLine("                    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██║    ██║██╔══██╗██╔══██╗██╔════╝");
-            Console.WriteLine("                    ███████╗   ██║   ███████║██████╔╝    ██║ █╗ ██║███████║██████╔╝███████╗");
-            Console.WriteLine("                    ╚════██║   ██║   ██╔══██║██╔══██╗    ██║███╗██║██╔══██║██╔══██╗╚════██║");
-            Console.WriteLine("                    ███████║   ██║   ██║  ██║██║  ██║    ╚███╔███╔╝██║  ██║██║  ██║███████║");
-            Console.WriteLine("                    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝");
+            Hmi.centeredOutput("                    ███████╗████████╗ █████╗ ██████╗     ██╗    ██╗ █████╗ ██████╗ ███████");
+            Hmi.centeredOutput("                    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██║    ██║██╔══██╗██╔══██╗██╔════╝");
+            Hmi.centeredOutput("                    ███████╗   ██║   ███████║██████╔╝    ██║ █╗ ██║███████║██████╔╝███████╗");
+            Hmi.centeredOutput("                    ╚════██║   ██║   ██╔══██║██╔══██╗    ██║███╗██║██╔══██║██╔══██╗╚════██║");
+            Hmi.centeredOutput("                    ███████║   ██║   ██║  ██║██║  ██║    ╚███╔███╔╝██║  ██║██║  ██║███████║");
+            Hmi.centeredOutput("                    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -89,7 +89,7 @@ namespace LinqProjectIpi
 
                 case "5":
                     Console.WriteLine("Return to main menu");
-                    //TODO: faire un retour au menu principal
+                    Hmi.main();
                     break;
 
                 default:
