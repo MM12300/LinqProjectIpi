@@ -470,6 +470,8 @@ namespace LinqProjectIpi
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("WARNING : new characters will be added to a new .xml file in the actual directory/XML");
             Console.WriteLine("To search on a new character just added, please load the new file et launch the program again");
+            Console.ResetColor();
+
             string name = newCharacterInput("name");
             string height = newCharacterInput("height"); 
             string mass = newCharacterInput("mass");
@@ -496,7 +498,7 @@ namespace LinqProjectIpi
             try
             {
                 xmlFile.Add(newCharacter);
-                xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters_new.xml");
+                xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
                 Console.WriteLine("New character added");
                 Hmi.pushEnter();
             }
@@ -558,7 +560,7 @@ namespace LinqProjectIpi
                 else
                 {
                     Console.WriteLine("Error. Please try again with only gender male or female, we are working towards more inclusivity soon.");
-                    newCharacterInput(parameter);
+                    result = newCharacterInput(parameter);
                 }
             }
 
@@ -566,7 +568,7 @@ namespace LinqProjectIpi
             //Input check for birth year
             if ( parameter == "birth year")
             {
-                if (input.Length <= 4)
+                if (regexNumber.IsMatch(input) && input.Length <= 4)
                 {
                     result = input;
                 }            
@@ -576,6 +578,7 @@ namespace LinqProjectIpi
                     newCharacterInput(parameter);
                 }
             }
+
             return result;
         }
     }
