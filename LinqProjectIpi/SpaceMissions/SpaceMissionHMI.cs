@@ -39,7 +39,7 @@ namespace LinqProjectIpi
         {
             Console.WriteLine("Available options: :");
             Console.WriteLine("1 - All space missions");
-            Console.WriteLine("2 - Research");
+            Console.WriteLine("2 - Search");
             Console.WriteLine("3 - Add Mission");
             Console.WriteLine("4 - Convert Json Dataset into XML");
 
@@ -76,10 +76,9 @@ namespace LinqProjectIpi
                         Hmi.main();
                         return;
 
-
-
                     default:
                         Hmi.wrongOptions();
+                        main();
                         break;
                 }
             }
@@ -89,8 +88,10 @@ namespace LinqProjectIpi
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Add a new space mission:");
             Console.ResetColor();
+
             //Fetch last id
             int missionId = repo.fetchLastId();
+
             Console.WriteLine("Enter a company name:");
             var companyName = Console.ReadLine();
             Console.WriteLine("Enter a location:");
@@ -109,6 +110,7 @@ namespace LinqProjectIpi
             Console.WriteLine("Overview of the new space mission:");
             newSpacemission.missionDetail();
             Console.WriteLine("Do you want to procedd ?  Y/N");
+            
             var userInput = Console.ReadLine();
             if(userInput == "Y"){
                 Console.WriteLine("Adding new space mission");
@@ -161,44 +163,8 @@ namespace LinqProjectIpi
 
 
 
+
             void searchProcess(){
-                Hmi.centeredOutput("Search Menu");
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine("Choose your option :");
-                Console.ResetColor();
-                Console.WriteLine("1 - Simple search");
-                Console.WriteLine("2 - Advanced search");
-                Console.WriteLine("3 - Return");
-                Console.WriteLine();
-
-                switch (Console.ReadLine())
-                {
-                    case "1":
-                    Console.Clear();
-                    Hmi.showTitle(title);
-                    simpleSearch();
-                    break;
-
-                    case "2":
-                    Console.Clear();
-                    Hmi.showTitle(title);
-                    advancedSearch();
-                    break;
-
-                    default:
-                    Hmi.wrongOptions();
-                    Thread.Sleep(1000);
-                    advancedSearch();
-                    break;
-
-
-
-                    
-                }
-
-            }
-
-            void simpleSearch(){
                 Hmi.centeredOutput("Simple search");
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.WriteLine("Characteristics");
@@ -215,47 +181,42 @@ namespace LinqProjectIpi
                     case "1":
                         Console.WriteLine("Available companies:");
                         repo.searchByCompany();
-                        simpleSearch();
+                        searchProcess();
                         break;
                     
                     case "2":
                         Console.WriteLine("Available locations:");
                         repo.searchByLocation();
-                        simpleSearch();
+                        searchProcess();
                         break;
 
                     case "3":
                         searchByYear();
-                        simpleSearch();
+                        searchProcess();
                         break;
 
                     case "4":
                         repo.searchByRocketStatus();
-                        simpleSearch();
+                        searchProcess();
                         break;
 
                     case "5":
                         repo.searchByMissionStatus();
-                        simpleSearch();
+                        searchProcess();
                         break;
 
                     case "6":
                     break;
 
                     default:
-                    Hmi.wrongOptions();
-                    break;
+                        Hmi.wrongOptions();
+                        searchProcess();
+                        break;
 
                 }
 
 
             }
-
-            void advancedSearch(){
-                
-
-            }
-
 
     }
 }

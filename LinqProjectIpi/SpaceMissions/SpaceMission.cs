@@ -8,6 +8,7 @@ namespace LinqProjectIpi.SpaceMissions
 {
     public class SpaceMission
     {
+        [JsonProperty("missionId")]
         public int missionId { get; set; }
         [JsonProperty("Company Name")]
         public string companyName { get; set; }
@@ -35,7 +36,7 @@ namespace LinqProjectIpi.SpaceMissions
         }
 
         public void missionDetail(){
-            Console.WriteLine("==================== Mission Id {0} ====================", this.missionId);
+            Console.WriteLine("==================== Mission Id n°{0} ====================", this.missionId);
             Console.WriteLine("Company: {0}", this.companyName);
             Console.WriteLine("Rocket and payload: {0}", this.detail);
             Console.WriteLine("Date: {0} UTC", this.datum.ToString());

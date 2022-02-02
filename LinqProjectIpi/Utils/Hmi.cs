@@ -48,8 +48,7 @@ namespace LinqProjectIpi.Utils
 
         public static void main(){
             Hmi.start();
-            string option = Hmi.options();
-            Console.WriteLine(option);
+            Hmi.options();
             Console.ReadLine();
         }
 
@@ -73,7 +72,7 @@ namespace LinqProjectIpi.Utils
             Console.WriteLine("Here are our two data-sets:");
         }
 
-        public static string options()
+        public static void options()
         {
             Console.WriteLine("Choose an option :");
             Console.WriteLine("1 - Space Missions since 1957");
@@ -87,23 +86,24 @@ namespace LinqProjectIpi.Utils
                     case "1":                        
                         SpaceMissionHMI hmi = new SpaceMissionHMI();
                         hmi.main();
-                        return "space";
+                        break;
 
                     case "2":
                         StarWarsCharactersHMI starwarscharactersHMI = new StarWarsCharactersHMI();
                         starwarscharactersHMI.main();
-                        return "starwars";
+                        break;
 
                     case "3":
                         Console.WriteLine("Exiting the program...");
-                        return "exit";
+                        break;
 
                     default:
                         Console.WriteLine("Choose from one on these options only !");
                         Console.WriteLine("------------------------------------------");
                         Console.WriteLine();
-
-                        return options();
+                        main();
+                        break;
+                        
                 }
             }
         

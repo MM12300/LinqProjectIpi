@@ -264,7 +264,7 @@ namespace LinqProjectIpi.SpaceMissions
 
         private IEnumerable<SpaceMission> selectMissions(){
             var missions = from mission in missionCollection["AllMissions"]
-                select new SpaceMission(Convert.ToInt16(mission[""]), 
+                select new SpaceMission(Convert.ToInt16(mission["missionId"]), 
                             mission["Company Name"].ToString(), 
                             mission["Location"].ToString(), 
                             mission["Datum"].ToString(), 
@@ -278,7 +278,7 @@ namespace LinqProjectIpi.SpaceMissions
         private IEnumerable<SpaceMission> whereRequest(string fieldName, string research){
             var elements = from element in missionCollection[collectionName]
                 where element[fieldName].ToString().Contains(research, StringComparison.InvariantCultureIgnoreCase)
-                select new SpaceMission(Convert.ToInt16(element[""]), 
+                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -292,7 +292,7 @@ namespace LinqProjectIpi.SpaceMissions
             var elements = from element in missionCollection[collectionName]
                 where element[firstParam].ToString().Contains(firstParam, StringComparison.InvariantCultureIgnoreCase) && 
                         element[secondFieldName].ToString().Contains(secondParam, StringComparison.InvariantCultureIgnoreCase)
-                select new SpaceMission(Convert.ToInt16(element[""]), 
+                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -302,16 +302,17 @@ namespace LinqProjectIpi.SpaceMissions
             return elements;
         }
 
+        //TODO faire du groupBy
         public void searchUsingGroupBy(){}
 
-//orderby element.Element("Name").Value ascending
+
         public IEnumerable<SpaceMission> searchByYearRequest(int year, string choice){
             
 
             if(choice == "After"){
                 var elements = from element in missionCollection[collectionName]
                 where Misc.parseRFC1123Date(element["Datum"].ToString()).Year > year
-                select new SpaceMission(Convert.ToInt16(element[""]), 
+                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -324,7 +325,7 @@ namespace LinqProjectIpi.SpaceMissions
             else if(choice == "Before"){
                 var elements = from element in missionCollection[collectionName]
                 where Misc.parseRFC1123Date(element["Datum"].ToString()).Year < year
-                select new SpaceMission(Convert.ToInt16(element[""]), 
+                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -347,8 +348,6 @@ namespace LinqProjectIpi.SpaceMissions
             var userInput = Convert.ToInt16(Console.ReadLine());
 
             for(int i = 0; i < userInput; i++){
-                //Mission
-                Console.WriteLine(i);
                 var mission = missionList.ToList()[i];
                 mission.missionDetail();
             }
@@ -367,14 +366,10 @@ namespace LinqProjectIpi.SpaceMissions
         public void addMission(SpaceMission mission){
             var jsonSerializerSettings = new JsonSerializerSettings();
             jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
-            //jsonSerializerSettings.Formatting = Formatting.Indented;
 
             var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
             list.Add(mission);
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.None);
-            // SpaceMissionList finalList = new SpaceMissionList();
-            // finalList.setAllMissions(list);
-            //var baseJsonObject = new JObject(new JProperty("AllMissions",convertedJson.Replace("\\n    \\","")));
             
             var finalJson = "{\"AllMissions\":" + convertedJson.ToString() + "}";
             File.WriteAllText(@"./JSON/spacemission.json", finalJson);
