@@ -4,6 +4,8 @@ using Newtonsoft.Json.Linq;
 using LinqProjectIpi.Utils;
 using LinqProjectIpi.SpaceMissions;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LinqProjectIpi
 {
@@ -24,8 +26,9 @@ namespace LinqProjectIpi
             Console.WriteLine("Available options: :");
             Console.WriteLine("1 - List all space missions");
             Console.WriteLine("2 - Research");
+            Console.WriteLine("3 - Add a mission");
 
-            Console.WriteLine("3 - Return");
+            Console.WriteLine("4 - Return");
             Console.WriteLine();
             Console.WriteLine("\r\n Choose an option");
 
@@ -42,15 +45,16 @@ namespace LinqProjectIpi
                         searchProcess();
                         main();
                         break;
-                    
+
                     case "3":
+                        addMissionMenu();
+                        break;
+                    
+                    case "4":
                         main();
                         break;
 
-                    case "4":
-                       repo.searchByYear();
 
-                        break;
 
                     default:
                         Hmi.wrongOptions();
@@ -81,6 +85,9 @@ namespace LinqProjectIpi
                     Hmi.showTitle(title);
                     advancedSearch();
                     break;
+
+                    case "3":
+                        break;
 
                     default:
                     Hmi.wrongOptions();
@@ -121,7 +128,7 @@ namespace LinqProjectIpi
                         break;
 
                     case "3":
-                        repo.searchByYear();
+                        searchByYear();
                         simpleSearch();
                         break;
 
@@ -151,6 +158,69 @@ namespace LinqProjectIpi
                 
 
             }
+
+        public void addMissionMenu(){
+            //Fetch last id
+            int missionId = repo.fetchLastId();
+            Console.WriteLine("Enter a company name:");
+            var companyName = Console.ReadLine();
+            Console.WriteLine("Enter a location:");
+            var location = Console.ReadLine();
+            Console.WriteLine("Enter a date using the following format:");
+            Console.WriteLine("Thu, 21 Jan 2010 17:47:00 UTC");
+            var date = Console.ReadLine();
+            Console.WriteLine("Enter mission details:");
+            var details = Console.ReadLine();
+            Console.WriteLine("Enter the rocket status:");
+            var rocketStatus = Console.ReadLine();
+            Console.WriteLine("Enter the mission status:");
+            var missionStatus = Console.ReadLine();
+
+            SpaceMission newSpacemission = new SpaceMission(missionId, companyName, location, date, details, rocketStatus, missionStatus);
+            Console.WriteLine("Overview of the new space mission:");
+            newSpacemission.missionDetail();
+            Console.WriteLine("Do you want to procedd ?  Y/N");
+            var userInput = Console.ReadLine();
+            if(userInput == "Y"){
+                Console.WriteLine("Adding new space mission");
+                repo.addMission(newSpacemission);
+            }
+            else if(userInput == "N"){
+                Console.WriteLine("Mission will not be added");
+            }
+
+            else{
+                Hmi.wrongOptions();
+            }     
+        }
+
+        public void searchByYear(){
+            IEnumerable<SpaceMission> missions;
+            Console.WriteLine("Select a year to retrieve the associated missions ...");
+            //CHoix de l'utilisateur pour l'année
+            var year = Console.ReadLine();
+            var option = Console.ReadLine();
+
+            switch(option){
+                case "1":
+                    missions = repo.searchByYearRequest(int.Parse(year));
+                    repo.orderBy(missions);
+                    repo.cappedChoice(missions.ToList());
+                    break;
+                
+                case "2":
+                    missions = repo.searchByYearRequest(int.Parse(year));
+                    repo.orderBy(missions);
+                    repo.cappedChoice(missions.ToList());
+                    break;
+                
+                default:
+                    Hmi.wrongOptions();
+                    break;
+            }
+            
+            
+        }
 
 
     }

@@ -10,5 +10,6 @@ namespace LinqProjectIpi.Utils
             DateTime result = DateTime.Parse(date);
             return result;
         }
+        
     }
 }

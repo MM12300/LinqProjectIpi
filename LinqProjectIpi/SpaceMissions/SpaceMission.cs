@@ -15,12 +15,15 @@ namespace LinqProjectIpi.SpaceMissions
         public string location { get; set; }
         
 
-        public SpaceMission(int missionId, string companyName, string detail, string statusRocket, string statusMission, string date, string location)
+        public SpaceMission(int missionId, string companyName, string location, string date, string detail, string statusRocket, string statusMission)
         {
             this.missionId = missionId;
             this.companyName = companyName;
             this.detail = detail;
-            this.statusRocket = statusRocket.Replace("Status", "");
+            if(statusRocket != null){
+                this.statusRocket = statusRocket.Replace("Status", "");
+            }
+            
             this.statusMission = statusMission;
             this.date = Misc.parseRFC1123Date(date);
             this.location = location;

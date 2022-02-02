@@ -5,6 +5,9 @@ using Newtonsoft.Json.Linq;
 using System.IO;
 using LinqProjectIpi.Utils;
 using System.Text;
+using Newtonsoft.Json;
+using System.Linq.Expressions;
+using System.Threading;
 
 namespace LinqProjectIpi.SpaceMissions
 {
@@ -131,35 +134,17 @@ namespace LinqProjectIpi.SpaceMissions
             }
         }
 
-        public void searchByYear(){
-            IEnumerable<SpaceMission> missions;
-            Console.WriteLine("Select a year to retrieve the associated missions ...");
-            //CHoix de l'utilisateur pour l'année
-            var year = Console.ReadLine();
-            var option = Console.ReadLine();
 
-            switch(option){
-                case "1":
-                    missions = searchByYearRequest(int.Parse(year));
-                    orderBy(missions);
-                    cappedChoice(missions.ToList());
-                    break;
-                
-                case "2":
-                    missions = searchByYearRequest(int.Parse(year));
-                    orderBy(missions);
-                    cappedChoice(missions.ToList());
-                    break;
-                
-                default:
-                    Hmi.wrongOptions();
-                    break;
-            }
-            
+        public int fetchLastId(){
+            var jsonSerializerSettings = new JsonSerializerSettings();
+            jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
+
+            var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
+            return list.Last().missionId;
             
         }
 
-        private IEnumerable<SpaceMission> orderBy(IEnumerable<SpaceMission> missions){
+        public IEnumerable<SpaceMission> orderBy(IEnumerable<SpaceMission> missions){
             string order;
             Console.WriteLine("By which field would you like to order the list ?");
             Console.WriteLine("1) Order by company name");
@@ -314,7 +299,7 @@ namespace LinqProjectIpi.SpaceMissions
 
         public void searchUsingGroupBy(){}
 
-//orderby element.Element("Name").Value ascending
+        //orderby element.Element("Name").Value ascending
         public IEnumerable<SpaceMission> searchByYearRequest(int year){
             var elements = from element in missionCollection[collectionName]
 
@@ -332,7 +317,7 @@ namespace LinqProjectIpi.SpaceMissions
 
         }
 
-        private void cappedChoice(List<SpaceMission> missionList){
+        public void cappedChoice(List<SpaceMission> missionList){
             Console.WriteLine("I've found {0} missions", missionList.Count());
             Console.WriteLine("How many of them do you want to display ?");
             var userInput = Convert.ToInt16(Console.ReadLine());
@@ -344,6 +329,18 @@ namespace LinqProjectIpi.SpaceMissions
                 mission.missionDetail();
             }
             Hmi.pushEnter();
+        }
+
+
+        public void addMission(SpaceMission mission){
+            var jsonSerializerSettings = new JsonSerializerSettings();
+            jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
+
+            var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
+            list.Add(mission);
+            var convertedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+
+            File.WriteAllText(@"./JSON/spacemission.json", convertedJson);
         }    
     }
 }
