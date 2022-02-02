@@ -27,8 +27,10 @@ namespace LinqProjectIpi
             Console.WriteLine("1 - List all space missions");
             Console.WriteLine("2 - Research");
             Console.WriteLine("3 - Add Mission");
+            Console.WriteLine("4 - Convert Json Dataset into XML");
 
-            Console.WriteLine("4 - Return");
+
+            Console.WriteLine("5 - Return");
             Console.WriteLine();
             Console.WriteLine("\r\n Choose an option");
 
@@ -49,8 +51,12 @@ namespace LinqProjectIpi
                     case "3":
                         addMissionMenu();
                         break;
-                    
+
                     case "4":
+                        Misc.saveJsonToXml();
+                        break;
+                    
+                    case "5":
                         main();
                         break;
 
