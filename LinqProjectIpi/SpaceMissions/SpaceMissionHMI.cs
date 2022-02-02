@@ -47,6 +47,11 @@ namespace LinqProjectIpi
                         main();
                         break;
 
+                    case "4":
+                       repo.searchByYear();
+
+                        break;
+
                     default:
                         Hmi.wrongOptions();
                         break;
@@ -96,7 +101,7 @@ namespace LinqProjectIpi
 
                 Console.WriteLine("1 - Company name");
                 Console.WriteLine("2 - Location");
-                Console.WriteLine("3 - Date");
+                Console.WriteLine("3 - Year");
                 Console.WriteLine("4 - Rocket Status");
                 Console.WriteLine("5 - Mission Status");
                 Console.WriteLine("6 - Return");
@@ -116,13 +121,19 @@ namespace LinqProjectIpi
                         break;
 
                     case "3":
-                    //TODO search by date
+                        repo.searchByYear();
+                        simpleSearch();
+                        break;
 
                     case "4":
-                    //TODO search by rocket status
+                        repo.searchByRocketStatus();
+                        simpleSearch();
+                        break;
 
                     case "5":
-                    //TODO search by mission status
+                        repo.searchByMissionStatus();
+                        simpleSearch();
+                        break;
 
                     case "6":
                     break;
