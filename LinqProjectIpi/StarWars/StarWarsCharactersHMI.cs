@@ -29,31 +29,48 @@ namespace LinqProjectIpi
             Console.WriteLine("4 - Add a character");
             Console.WriteLine("5 - Return to main menu");
             Console.WriteLine();
-            Console.WriteLine("\r\n Choose an option (1,2,3,4,5)");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\r\n Choose an option");
+            Console.ResetColor();
 
             switch (Console.ReadLine())
                 {
-                case "1":                        
+                case "1":
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("Displays all Star Wars Characters Names");
+                    Console.ResetColor();
+                    Console.WriteLine();
                     getAllCharactersDetails();
                     main();
                     break;
 
                 case "2":
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("Search characters with different criterias");
+                    Console.ResetColor();
+                    Console.WriteLine();
                     searchMenu();
                     main();
                     break;
 
                 case "3":
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
                     Console.WriteLine("Search characters with special traits");
+                    Console.ResetColor();
+                    Console.WriteLine();
                     specialTraits();
                     main();
                     break;
 
                 case "4":
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.WriteLine("Add a new character");
+                    Console.ResetColor();
+                    Console.WriteLine();
                     addNewCharacter();
                     main();
                     break;
@@ -99,10 +116,16 @@ namespace LinqProjectIpi
         public void characterOutput(IEnumerable<XElement> allcharacters)
         {
             string output = "";
+            int number = 0;
             if (allcharacters.Any() && allcharacters != null )
             {
                 foreach (XElement character in allcharacters)
                 {
+                    output += "\r\n";
+                    output += "---------------------------" + "\r\n";
+                    output += ".-.-.-.-.-.-.-.-.-.-.-.-.-" + "\r\n";
+                    output += "---------------------------" + "\r\n";
+                    output += "\r\n";
                     foreach (var element in character.Elements())
                     {
                         if (element.Value != "none" && element.Value != "NA")
@@ -121,11 +144,6 @@ namespace LinqProjectIpi
                             }
                         }
                     }
-                    output += "\r\n";
-                    output += "---------------------------" + "\r\n";
-                    output += ".-.-.-.-.-.-.-.-.-.-.-.-.-" + "\r\n";
-                    output += "---------------------------" + "\r\n";
-                    output += "\r\n";
                 }
             }
             else
@@ -155,7 +173,9 @@ namespace LinqProjectIpi
             Console.WriteLine("10 - Specie");
             Console.WriteLine("11 - Return to Star Wars Menu");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\r\n Choose an option");
+            Console.ResetColor();
 
             switch (Console.ReadLine())
             {
@@ -237,7 +257,9 @@ namespace LinqProjectIpi
             }
 
             characterOutput(characters);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Lets go for another search !");
+            Console.ResetColor();
             Hmi.pushEnter();
         }
 
@@ -257,7 +279,9 @@ namespace LinqProjectIpi
             Console.WriteLine("9 - Homeworld");
             Console.WriteLine("10 - Specie");
             Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\r\n Choose an option");
+            Console.ResetColor();
 
             string orderBy = "";
 
@@ -326,7 +350,9 @@ namespace LinqProjectIpi
                 Console.WriteLine("1 - male character(s)");
                 Console.WriteLine("2 - female character(s)");
                 Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\r\n Choose an option");
+                Console.ResetColor();
 
                 switch (Console.ReadLine())
                 {
@@ -357,6 +383,7 @@ namespace LinqProjectIpi
         //Confirm a search console output
         public void confirmSearch()
         {
+            Console.WriteLine();
             Console.WriteLine("Do you confirm this research ?");
             Console.WriteLine("1 - Yes");
             Console.WriteLine("2 - No");

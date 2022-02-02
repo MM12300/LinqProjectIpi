@@ -22,14 +22,18 @@ namespace LinqProjectIpi.Utils
 
         public static void pushEnter()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Push enter to continue...");
+            Console.ResetColor();
             Console.ReadLine();
         }
 
         public static void wrongOptions()
         {
             Console.WriteLine("------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Choose from mentionned options only");
+            Console.ResetColor();
             Console.WriteLine("------------------------------------------");
             pushEnter();
         }
