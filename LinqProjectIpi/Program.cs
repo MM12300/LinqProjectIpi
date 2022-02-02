@@ -22,6 +22,19 @@ namespace LinqProjectIpi
         {
             Console.Clear();
             Hmi.showTitle("Welcome to Raphaël's and Matthieu's  Linq project :-)");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("                            :::           :::::::::::          ::::    :::          ::::::::                      ");
+            Console.WriteLine("                           :+:               :+:              :+:+:   :+:         :+:    :+:                      ");
+            Console.WriteLine("                          +:+               +:+              :+:+:+  +:+         +:+    +:+                       ");
+            Console.WriteLine("   +#++:++#++:++         +#+               +#+              +#+ +:+ +#+         +#+    +:+        +#++:++#++:++   ");
+            Console.WriteLine("                        +#+               +#+              +#+  +#+#+#         +#+    +#+                         ");
+            Console.WriteLine("                       #+#               #+#              #+#   #+#+#         #+#    #+##                         ");
+            Console.WriteLine("                      ##########    ###########          ###    ####          ##############                      ");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Here are our two data-sets:");
         }
 

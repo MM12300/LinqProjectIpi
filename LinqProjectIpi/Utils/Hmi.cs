@@ -11,19 +11,6 @@ namespace LinqProjectIpi.Utils
             centeredOutput("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
             centeredOutput(title);
             centeredOutput("-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-=-..-");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("                            :::           :::::::::::          ::::    :::          ::::::::                      ");
-            Console.WriteLine("                           :+:               :+:              :+:+:   :+:         :+:    :+:                      ");
-            Console.WriteLine("                          +:+               +:+              :+:+:+  +:+         +:+    +:+                       ");
-            Console.WriteLine("   +#++:++#++:++         +#+               +#+              +#+ +:+ +#+         +#+    +:+        +#++:++#++:++   ");
-            Console.WriteLine("                        +#+               +#+              +#+  +#+#+#         +#+    +#+                         ");
-            Console.WriteLine("                       #+#               #+#              #+#   #+#+#         #+#    #+##                         ");
-            Console.WriteLine("                      ##########    ###########          ###    ####          ##############                      ");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
         }
 
         public static void centeredOutput(string input){

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.IO;
 using System.Xml.Linq;
@@ -16,6 +16,18 @@ namespace LinqProjectIpi
         public void main(){
             Console.WriteLine(Directory.GetCurrentDirectory());
             Hmi.showTitle("Star Wars Characters");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("                    ███████╗████████╗ █████╗ ██████╗     ██╗    ██╗ █████╗ ██████╗ ███████");
+            Console.WriteLine("                    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██║    ██║██╔══██╗██╔══██╗██╔════╝");
+            Console.WriteLine("                    ███████╗   ██║   ███████║██████╔╝    ██║ █╗ ██║███████║██████╔╝███████╗");
+            Console.WriteLine("                    ╚════██║   ██║   ██╔══██║██╔══██╗    ██║███╗██║██╔══██║██╔══██╗╚════██║");
+            Console.WriteLine("                    ███████║   ██║   ██║  ██║██║  ██║    ╚███╔███╔╝██║  ██║██║  ██║███████║");
+            Console.WriteLine("                    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
             options();
         }
 
