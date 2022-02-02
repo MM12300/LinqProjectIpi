@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Linq;
 using System.Collections.Generic;
 using LinqProjectIpi.Utils;
+using System.Text.RegularExpressions;
 
 namespace LinqProjectIpi
 {
@@ -11,21 +12,24 @@ namespace LinqProjectIpi
 
         private XElement xmlFile = XElement.Load($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
 
+        // Main method containing options menu
         public void main(){
             Console.WriteLine(Directory.GetCurrentDirectory());
             Hmi.showTitle("Star Wars Characters");
             options();
         }
 
+        // Options menu
         void options()
         {
             Console.WriteLine("Choose an option :");
             Console.WriteLine("1 - All Characters Details");
             Console.WriteLine("2 - Search Mode");
             Console.WriteLine("3 - Characters by special traits");
-            Console.WriteLine("4 - Return to main menu");
+            Console.WriteLine("4 - Add a character");
+            Console.WriteLine("5 - Return to main menu");
             Console.WriteLine();
-            Console.WriteLine("\r\n Choose an option (1,2,3)");
+            Console.WriteLine("\r\n Choose an option (1,2,3,4,5)");
 
             switch (Console.ReadLine())
                 {
@@ -50,6 +54,11 @@ namespace LinqProjectIpi
                     break;
 
                 case "4":
+                    addNewCharacter();
+                    main();
+                    break;
+
+                case "5":
                     Console.WriteLine("Return to main menu");
                     //TODO: faire un retour au menu principal
                     break;
@@ -62,8 +71,10 @@ namespace LinqProjectIpi
             }
 
 
+        // Get all characters from XML file
         public void getAllcharacters()
         {
+            //Linq query
             var characters = from element in xmlFile.Descendants("character")
                              select element;
 
@@ -73,8 +84,10 @@ namespace LinqProjectIpi
             }
         }
 
+        // Displays all characters one by one with all their characteristics
         public void getAllCharactersDetails()
         {
+            //Linq query to fetch all characters
             IEnumerable<XElement> allcharacters = from characters in xmlFile.Descendants("character")
                                                   select characters;
 
@@ -82,6 +95,7 @@ namespace LinqProjectIpi
             Hmi.pushEnter();
         }
 
+        //Create console ouput for an enumerable of all characters
         public void characterOutput(IEnumerable<XElement> allcharacters)
         {
             string output = "";
@@ -107,6 +121,11 @@ namespace LinqProjectIpi
                             }
                         }
                     }
+                    output += "\r\n";
+                    output += "---------------------------" + "\r\n";
+                    output += ".-.-.-.-.-.-.-.-.-.-.-.-.-" + "\r\n";
+                    output += "---------------------------" + "\r\n";
+                    output += "\r\n";
                 }
             }
             else
@@ -120,6 +139,7 @@ namespace LinqProjectIpi
             Console.WriteLine("--");
         }
 
+        //Menu to search characters with different criterias
         public void searchMenu()
         {
             Console.WriteLine("Search by :");
@@ -190,7 +210,7 @@ namespace LinqProjectIpi
             }
         }
    
-
+        //Get character(s) with a criteria and a filter (always ascendant for alphabetic order)
         public void getCharactersBy(string criteria, string filter, string search)
         {
             IEnumerable<XElement> characters = Enumerable.Empty<XElement>();
@@ -221,6 +241,7 @@ namespace LinqProjectIpi
             Hmi.pushEnter();
         }
 
+        //Orders characters menu
         public string characterOrder(string searchBy, string searchValue)
         {
             Console.WriteLine();
@@ -293,6 +314,7 @@ namespace LinqProjectIpi
             }
         }
 
+        //Search Console Output depending on criteria
         public void searchProcess(string criteria)
         {
             string search = "";
@@ -332,6 +354,7 @@ namespace LinqProjectIpi
             }
         }
 
+        //Confirm a search console output
         public void confirmSearch()
         {
             Console.WriteLine("Do you confirm this research ?");
@@ -356,6 +379,7 @@ namespace LinqProjectIpi
             }
         }
 
+        //Search by special traits menu
         public void specialTraits()
         {
             Console.WriteLine("Which characters special traits would you like to explore ?");
@@ -396,6 +420,7 @@ namespace LinqProjectIpi
             }
         }
 
+        //Get characters with a special trait as criteria and different search conditions (where >,=,<)
         public void getCharactersBySpecialTraits(string trait)
         {
             IEnumerable<XElement> characters = Enumerable.Empty<XElement>();
@@ -436,6 +461,122 @@ namespace LinqProjectIpi
 
             characterOutput(characters);
             Hmi.pushEnter();
+        }
+
+        //Add a new character and save a new XML file
+        public void addNewCharacter()
+        {
+            Console.WriteLine("Add a new character to the database");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("WARNING : new characters will be added to a new .xml file in the actual directory/XML");
+            Console.WriteLine("To search on a new character just added, please load the new file et launch the program again");
+            string name = newCharacterInput("name");
+            string height = newCharacterInput("height"); 
+            string mass = newCharacterInput("mass");
+            string hairColor = newCharacterInput("hair color");
+            string skinColor = newCharacterInput("skin color");
+            string eyeColor = newCharacterInput("eye color");
+            string birthYear = newCharacterInput("birth year");
+            string gender = newCharacterInput("gender");
+            string homeworld = newCharacterInput("homeworld");
+            string specie = newCharacterInput("specie");
+
+            var newCharacter = new XElement("character",
+                    new XElement("Name", name),
+                    new XElement("Height", height),
+                    new XElement("Mass", mass),
+                    new XElement("hair_color", hairColor),
+                    new XElement("skin_color", skinColor),
+                    new XElement("eye_color", eyeColor),
+                    new XElement("birth_year", birthYear),
+                    new XElement("Gender", gender),
+                    new XElement("Homeworld", homeworld),
+                    new XElement("Specie", specie));
+
+            try
+            {
+                xmlFile.Add(newCharacter);
+                xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters_new.xml");
+                Console.WriteLine("New character added");
+                Hmi.pushEnter();
+            }
+
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+        }
+
+        //Console Input/Output for a new character
+        public string newCharacterInput(string parameter)
+        {
+            Console.Write("What is your new character --" + parameter + "-- ?");
+            string input = Console.ReadLine();
+            string result = "";
+
+            //Check if number
+            Regex regexNumber = new Regex("[0-9]");
+
+
+            //Input check for name, colors, specie and homeworld
+            if (parameter == "name" || parameter == "eye color" || parameter == "skin color" || parameter == "hair color" || parameter == "specie" || parameter =="homeworld")
+            {
+                if((input.Length < 20))
+                {
+                    result = input;
+                }
+                else
+                {
+                    Console.WriteLine("Error. Please try again with less than 20 characters");
+                    newCharacterInput(parameter);
+                }
+            }
+           
+
+            //Input check for height and mass
+            if (parameter == "height" || parameter == "mass" )
+            {
+                if((regexNumber.IsMatch(input) && input.Length <= 4))
+                {
+                    result = input;
+                }
+                else
+                {
+                    Console.WriteLine("Error. Please try again with only numbers with 4 characters maximum (nobody can't be that tall or that big)");
+                    newCharacterInput(parameter);
+                }
+            }
+
+
+            //Input check for gender
+            if (parameter == "gender")
+            {
+                if((input == "male" || input == "female"))
+                {
+                    result = input;
+                }
+                else
+                {
+                    Console.WriteLine("Error. Please try again with only gender male or female, we are working towards more inclusivity soon.");
+                    newCharacterInput(parameter);
+                }
+            }
+
+
+            //Input check for birth year
+            if ( parameter == "birth year")
+            {
+                if (input.Length <= 4)
+                {
+                    result = input;
+                }            
+                else
+                {
+                    Console.WriteLine("Error. Please try again with someone younger, nobody can be that old in the Star Wars Universe");
+                    newCharacterInput(parameter);
+                }
+            }
+            return result;
         }
     }
 }
