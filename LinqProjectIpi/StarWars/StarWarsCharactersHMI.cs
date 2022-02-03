@@ -39,7 +39,8 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - Search Mode");
             Console.WriteLine("3 - Characters by special traits");
             Console.WriteLine("4 - Add a character");
-            Console.WriteLine("5 - Return to main menu");
+            Console.WriteLine("5 - Convert Json Dataset into XML");
+            Console.WriteLine("6 - Return to main menu");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\r\n Choose an option");
@@ -88,6 +89,11 @@ namespace LinqProjectIpi
                     break;
 
                 case "5":
+                    Misc.saveXmlToJson();
+                    main();
+                    break;
+
+                case "6":
                     Console.WriteLine("Return to main menu");
                     Hmi.main();
                     break;
