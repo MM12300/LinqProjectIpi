@@ -39,7 +39,7 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - Search Mode");
             Console.WriteLine("3 - Characters by special traits");
             Console.WriteLine("4 - Add a character");
-            Console.WriteLine("5 - Convert JsXMLon Dataset into JSON");
+            Console.WriteLine("5 - Convert Json Dataset into XML");
             Console.WriteLine("6 - Return to main menu");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
@@ -155,6 +155,11 @@ namespace LinqProjectIpi
                             else if (element.Name == "Mass")
                             {
                                 output += element.Name + " : " + element.Value + "kg" + "\r\n";
+
+                            }
+                            else if (element.Name == "birth_year")
+                            {
+                                output += element.Name + " : " + element.Value + " BBY (Before Battle of Yavin)" + "\r\n";
                             }
                             else
                             {
@@ -432,8 +437,7 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - The midgets : size <= 120cm");
             Console.WriteLine("3 - The light-ones : mass <= 50kg");
             Console.WriteLine("4 - The big-ones : size >= 150kg");
-            Console.WriteLine("5 - The elders : age >= 100 years old");
-            Console.WriteLine("6 - Return to Star Wars menu");
+            Console.WriteLine("5 - Return to Star Wars menu");
             switch (Console.ReadLine())
             {
                 case "1":
@@ -453,10 +457,6 @@ namespace LinqProjectIpi
                     specialTraits();
                     break;
                 case "5":
-                    getCharactersBySpecialTraits("old");
-                    specialTraits();
-                    break;
-                case "6":
                     main();
                     break;
                 default:
@@ -575,7 +575,7 @@ namespace LinqProjectIpi
                 else
                 {
                     Console.WriteLine("Error. Please try again with less than 20 characters");
-                    newCharacterInput(parameter);
+                    result = newCharacterInput(parameter);
                 }
             }
            
@@ -590,7 +590,7 @@ namespace LinqProjectIpi
                 else
                 {
                     Console.WriteLine("Error. Please try again with only numbers with 4 characters maximum (nobody can't be that tall or that big)");
-                    newCharacterInput(parameter);
+                    result = newCharacterInput(parameter);
                 }
             }
 
@@ -619,8 +619,8 @@ namespace LinqProjectIpi
                 }            
                 else
                 {
-                    Console.WriteLine("Error. Please try again with someone younger, nobody can be that old in the Star Wars Universe");
-                    newCharacterInput(parameter);
+                    Console.WriteLine("Error. Please try again with a numeric value.");
+                    result = newCharacterInput(parameter);
                 }
             }
 
