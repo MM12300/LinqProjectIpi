@@ -39,7 +39,7 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - Search Mode");
             Console.WriteLine("3 - Characters by special traits");
             Console.WriteLine("4 - Add a character");
-            Console.WriteLine("5 - Convert Json Dataset into XML");
+            Console.WriteLine("5 - Convert JsXMLon Dataset into JSON");
             Console.WriteLine("6 - Return to main menu");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
