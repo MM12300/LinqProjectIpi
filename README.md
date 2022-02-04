@@ -1,27 +1,24 @@
-2022 - MADEJSKI Matthieu / PERLES Raphaël
+**2022 - MADEJSKI Matthieu / PERLES Raphaël**
 
 Application console développé en C# .NET ayant pour but de faire une démonstration de Linq.
 
-Pour lancer l'application, utiliser le .exe présent dans le dossier "application".
-
 Choix de la langue anglaise pour concevoir l'application dans la mesure où les jeux de données exploités sont en anglais.
 
-Deux jeux de données : 
+**Deux jeux de données :** 
 - format XML : les personnage de l'univers de Star Wars
 - format JSON : les missions spatiales
 
-COMMENT UTILISER L'APPLICATION : 
+**COMMENT UTILISER L'APPLICATION :** 
+Pour lancer l'application, utiliser le .exe présent dans le dossier "application".
 
-Les menus de l'application :
-  - Menu principal : 
-  
-  - Les missions spatiales depuis 1957 :
+**Les menus de l'application :**
+  - _Les missions spatiales depuis 1957 :_
     1-
     2-
     3-
     4-
 
-  - Star Wars : 
+  - _Star Wars :_ 
     - All characters details, permet d'afficher les détails de tous les personnages présents dans le jeu de donnée.
     - Search Mode, permet de chercher un personnage en fonction d'un critère et classe les résultats de la recherche en fonction d'un autre critère (différent du premier)
         les résultats sont classés par odre alphabétique (ou croissant si ce sont des valeurs numériques).
