@@ -587,6 +587,7 @@ namespace LinqProjectIpi
 
             //Check if number
             Regex regexNumber = new Regex("[0-9]");
+            Regex regexLetter = new Regex("^[^0-9]+$");
 
             if(input.Length == 0 || input == null)
             {
@@ -594,8 +595,8 @@ namespace LinqProjectIpi
             }
 
 
-            //Input check for name, colors, specie and homeworld
-            if (parameter == "name" || parameter == "eye color" || parameter == "skin color" || parameter == "hair color" || parameter == "specie" || parameter =="homeworld")
+            //Input check for name, specie and homeworld
+            if (parameter == "name" || parameter == "specie" || parameter =="homeworld")
             {
                 if((input.Length < 20) || input == "NA")
                 {
@@ -604,6 +605,21 @@ namespace LinqProjectIpi
                 else
                 {
                     Console.WriteLine("Error. Please try again with less than 20 characters");
+                    result = newCharacterInput(parameter);
+                }
+            }
+
+            //Input check for colors
+            if(parameter == "eye color" || parameter == "skin color" || parameter == "hair color")
+            {
+                Console.WriteLine(regexLetter.IsMatch(input));
+                if ((input.Length < 20 && regexLetter.IsMatch(input)) || input == "NA" )
+                {
+                    result = input;
+                }
+                else
+                {
+                    Console.WriteLine("Error. Please try again with less than 20 characters and no numbers");
                     result = newCharacterInput(parameter);
                 }
             }
