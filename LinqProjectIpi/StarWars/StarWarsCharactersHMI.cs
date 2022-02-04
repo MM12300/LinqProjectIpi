@@ -542,10 +542,34 @@ namespace LinqProjectIpi
 
             try
             {
-                xmlFile.Add(newCharacter);
-                xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
-                Console.WriteLine("New character added");
-                Hmi.pushEnter();
+                if(name == "NA" || (height == "NA" && height == "NA" && mass == "NA" && hairColor == "NA" && skinColor == "NA" && eyeColor == "NA" && birthYear == "NA" && gender == "NA" && homeworld == "NA" && specie == "NA"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("A new character needs at least a name and one caracteristic");
+                    Console.ResetColor();
+                    Hmi.pushEnter();
+                }
+                else
+                {
+                    xmlFile.Add(newCharacter);
+                    xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
+                    Console.WriteLine();
+                    Console.WriteLine("New character added");
+                    Console.WriteLine();
+                    Console.WriteLine("Name : {0}", name);
+                    Console.WriteLine("Height : {0}", height);
+                    Console.WriteLine("Mass : {0}", mass);
+                    Console.WriteLine("Hair color : {0}", hairColor);
+                    Console.WriteLine("Skin color : {0}", skinColor);
+                    Console.WriteLine("Eye Color : {0}", eyeColor);
+                    Console.WriteLine("Birth Year : {0}", birthYear);
+                    Console.WriteLine("Gender : {0}", gender);
+                    Console.WriteLine("Homeworld : {0}", homeworld);
+                    Console.WriteLine("Specie : {0}", specie);
+                    Console.WriteLine();
+                    Hmi.pushEnter();
+                }
+
             }
 
             catch (Exception exc)
@@ -564,11 +588,16 @@ namespace LinqProjectIpi
             //Check if number
             Regex regexNumber = new Regex("[0-9]");
 
+            if(input.Length == 0 || input == null)
+            {
+                input = "NA";
+            }
+
 
             //Input check for name, colors, specie and homeworld
             if (parameter == "name" || parameter == "eye color" || parameter == "skin color" || parameter == "hair color" || parameter == "specie" || parameter =="homeworld")
             {
-                if((input.Length < 20))
+                if((input.Length < 20) || input == "NA")
                 {
                     result = input;
                 }
@@ -581,9 +610,9 @@ namespace LinqProjectIpi
            
 
             //Input check for height and mass
-            if (parameter == "height" || parameter == "mass" )
+            if (parameter == "height" || parameter == "mass")
             {
-                if((regexNumber.IsMatch(input) && input.Length <= 4))
+                if((regexNumber.IsMatch(input) && input.Length <= 4) || input == "NA")
                 {
                     result = input;
                 }
@@ -598,7 +627,7 @@ namespace LinqProjectIpi
             //Input check for gender
             if (parameter == "gender")
             {
-                if((input == "male" || input == "female"))
+                if((input == "male" || input == "female" ||  input == "NA"))
                 {
                     result = input;
                 }
@@ -611,9 +640,9 @@ namespace LinqProjectIpi
 
 
             //Input check for birth year
-            if ( parameter == "birth year")
+            if (parameter == "birth year")
             {
-                if (regexNumber.IsMatch(input) && input.Length <= 4)
+                if ((regexNumber.IsMatch(input) && input.Length <= 4) || input == "NA")
                 {
                     result = input;
                 }            

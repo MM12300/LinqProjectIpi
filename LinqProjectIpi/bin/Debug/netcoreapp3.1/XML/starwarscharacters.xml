@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <root>
-  <character>
+	<character>
     <Name>R2-D2</Name>
     <Height>96</Height>
     <Mass>32</Mass>
@@ -12,7 +12,7 @@
     <Homeworld>Naboo</Homeworld>
     <Specie>Droid</Specie>
   </character>
-  <character>
+	<character>
     <Name>Darth Vader</Name>
     <Height>202</Height>
     <Mass>136</Mass>
@@ -24,7 +24,7 @@
     <Homeworld>Tatooine</Homeworld>
     <Specie>Human</Specie>
   </character>
-  <character>
+	<character>
     <Name>Leia Organa</Name>
     <Height>150</Height>
     <Mass>49</Mass>
@@ -36,7 +36,7 @@
     <Homeworld>Alderaan</Homeworld>
     <Specie>Human</Specie>
   </character>
-  <character>
+	<character>
     <Name>Owen Lars</Name>
     <Height>178</Height>
     <Mass>120</Mass>
@@ -1019,17 +1019,5 @@
     <Gender>female</Gender>
     <Homeworld>Naboo</Homeworld>
     <Specie>Human</Specie>
-  </character>
-  <character>
-    <Name>sdf</Name>
-    <Height>12</Height>
-    <Mass>12</Mass>
-    <hair_color>sdf</hair_color>
-    <skin_color>sdf</skin_color>
-    <eye_color>sdf</eye_color>
-    <birth_year>123</birth_year>
-    <Gender>male</Gender>
-    <Homeworld>asd</Homeworld>
-    <Specie>asd</Specie>
   </character>
 </root>
