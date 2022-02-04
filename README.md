@@ -13,14 +13,14 @@ Pour lancer l'application, utiliser le .exe présent dans le dossier "applicatio
 
 **Les menus de l'application :**
   - _Les missions spatiales depuis 1957 :_
-    1- All space missions, permet d'afficher l'ensemble des missions spatiales depuis 1957
-    2- Recent missions, permet d'afficher les missions récentes (moins de 10ans)
-    3- Old missions, permet d'afficher les missions les plus anciennes (plus de 40ans)
-    4- Search, recherche simple sur un champ avec des possibilités de tri
-    5- Advanced search, permet d'effectuer une recherche sur deux chalmps simultanément
-    6- Add mission, permet d'ajouter une mission au jeu de données
-    7- Convert Json DataSet into XML, permet de convertir le fichier json en fichier xml
-    8- Return to main menu, permet de retourner au menu principal
+    - 1- All space missions, permet d'afficher l'ensemble des missions spatiales depuis 1957
+    - 2- Recent missions, permet d'afficher les missions récentes (moins de 10ans)
+    - 3- Old missions, permet d'afficher les missions les plus anciennes (plus de 40ans)
+    - 4- Search, recherche simple sur un champ avec des possibilités de tri
+    - 5- Advanced search, permet d'effectuer une recherche sur deux chalmps simultanément
+    - 6- Add mission, permet d'ajouter une mission au jeu de données
+    - 7- Convert Json DataSet into XML, permet de convertir le fichier json en fichier xml
+    - 8- Return to main menu, permet de retourner au menu principal
 
   - _Star Wars :_ 
     - All characters details, permet d'afficher les détails de tous les personnages présents dans le jeu de donnée. Les informations indisponibles (NA pour "Non-Available) ne          sont pas affichées
