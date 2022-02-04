@@ -7,6 +7,7 @@ using LinqProjectIpi.Utils;
 using System.Text;
 using Newtonsoft.Json;
 using System.Runtime.InteropServices.WindowsRuntime;
+using LinqProjectIpi.SpaceMissionModels;
 
 namespace LinqProjectIpi.SpaceMissions
 {
@@ -84,7 +85,7 @@ namespace LinqProjectIpi.SpaceMissions
         }
 
         public void searchByRocketStatus(){
-            IEnumerable<SpaceMission> missions;
+            IEnumerable<SpaceMissionModel> missions;
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Select the rocket status to retrieve the associated missions ...");
             Console.ResetColor();
@@ -114,7 +115,7 @@ namespace LinqProjectIpi.SpaceMissions
         }
 
         public void searchByMissionStatus(){
-            IEnumerable<SpaceMission> missions;
+            IEnumerable<SpaceMissionModel> missions;
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("Select the mission status to retrieve the associated missions ...");
             Console.ResetColor();
@@ -145,7 +146,7 @@ namespace LinqProjectIpi.SpaceMissions
 
 
 
-        public IEnumerable<SpaceMission> orderBy(IEnumerable<SpaceMission> missions){
+        public IEnumerable<SpaceMissionModel> orderBy(IEnumerable<SpaceMissionModel> missions){
             string order;
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("By which field would you like to order the list ?");
@@ -262,9 +263,9 @@ namespace LinqProjectIpi.SpaceMissions
             return elements;        
         }
 
-        private IEnumerable<SpaceMission> selectMissions(){
+        private IEnumerable<SpaceMissionModel> selectMissions(){
             var missions = from mission in missionCollection["AllMissions"]
-                select new SpaceMission(Convert.ToInt16(mission["missionId"]), 
+                select new SpaceMissionModel(Convert.ToInt16(mission["missionId"]), 
                             mission["Company Name"].ToString(), 
                             mission["Location"].ToString(), 
                             mission["Datum"].ToString(), 
@@ -275,10 +276,10 @@ namespace LinqProjectIpi.SpaceMissions
             return missions;
         }
 
-        private IEnumerable<SpaceMission> whereRequest(string fieldName, string research){
+        private IEnumerable<SpaceMissionModel> whereRequest(string fieldName, string research){
             var elements = from element in missionCollection[collectionName]
                 where element[fieldName].ToString().Contains(research, StringComparison.InvariantCultureIgnoreCase)
-                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
+                select new SpaceMissionModel(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -288,11 +289,13 @@ namespace LinqProjectIpi.SpaceMissions
             return elements;
         }
 
-        public IEnumerable<SpaceMission> searchWithTwoParameters(string fiestFieldName, string secondFieldName, string firstParam, string secondParam){
+        public IEnumerable<SpaceMissionModel> searchWithTwoParameters(string firstFieldName, string secondFieldName, string firstParam, string secondParam){
+
+            
             var elements = from element in missionCollection[collectionName]
-                where element[firstParam].ToString().Contains(firstParam, StringComparison.InvariantCultureIgnoreCase) && 
+                where element[firstFieldName].ToString().Contains(firstParam, StringComparison.InvariantCultureIgnoreCase) && 
                         element[secondFieldName].ToString().Contains(secondParam, StringComparison.InvariantCultureIgnoreCase)
-                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
+                select new SpaceMissionModel(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -302,17 +305,14 @@ namespace LinqProjectIpi.SpaceMissions
             return elements;
         }
 
-        //TODO faire du groupBy
-        public void searchUsingGroupBy(){}
 
-
-        public IEnumerable<SpaceMission> searchByYearRequest(int year, string choice){
+        public IEnumerable<SpaceMissionModel> searchByYearRequest(int year, string choice){
             
 
             if(choice == "After"){
                 var elements = from element in missionCollection[collectionName]
                 where Misc.parseRFC1123Date(element["Datum"].ToString()).Year > year
-                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
+                select new SpaceMissionModel(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -325,7 +325,7 @@ namespace LinqProjectIpi.SpaceMissions
             else if(choice == "Before"){
                 var elements = from element in missionCollection[collectionName]
                 where Misc.parseRFC1123Date(element["Datum"].ToString()).Year < year
-                select new SpaceMission(Convert.ToInt16(element["missionId"]), 
+                select new SpaceMissionModel(Convert.ToInt16(element["missionId"]), 
                             element["Company Name"].ToString(), 
                             element["Location"].ToString(), 
                             element["Datum"].ToString(), 
@@ -340,14 +340,14 @@ namespace LinqProjectIpi.SpaceMissions
 
         }
 
-        public void cappedChoice(List<SpaceMission> missionList){
+        public void cappedChoice(List<SpaceMissionModel> missionList){
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine("I've found {0} missions", missionList.Count());
             Console.WriteLine("How many of them do you want to display ?");
             Console.ResetColor();
-            var userInput = Convert.ToInt16(Console.ReadLine());
+            var userInput = Misc.validateIntegerInput(Console.ReadLine());
 
-            for(int i = 0; i < userInput; i++){
+            for(int i = 0; i < Convert.ToInt16(userInput); i++){
                 var mission = missionList.ToList()[i];
                 mission.missionDetail();
             }
@@ -358,16 +358,16 @@ namespace LinqProjectIpi.SpaceMissions
             var jsonSerializerSettings = new JsonSerializerSettings();
             jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
 
-            var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
+            var list = JsonConvert.DeserializeObject<List<SpaceMissionModel>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
             return list.Last().missionId;
 
         }
 
-        public void addMission(SpaceMission mission){
+        public void addMission(SpaceMissionModel mission){
             var jsonSerializerSettings = new JsonSerializerSettings();
             jsonSerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
 
-            var list = JsonConvert.DeserializeObject<List<SpaceMission>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
+            var list = JsonConvert.DeserializeObject<List<SpaceMissionModel>>(missionCollection[collectionName].ToString(), jsonSerializerSettings);
             list.Add(mission);
             var convertedJson = JsonConvert.SerializeObject(list, Formatting.None);
             

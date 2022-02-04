@@ -4,9 +4,9 @@ using System.Text.Json.Serialization;
 using LinqProjectIpi.Utils;
 using Newtonsoft.Json;
 
-namespace LinqProjectIpi.SpaceMissions
+namespace LinqProjectIpi.SpaceMissionModels
 {
-    public class SpaceMission
+    public class SpaceMissionModel
     {
         [JsonProperty("missionId")]
         public int missionId { get; set; }
@@ -24,7 +24,7 @@ namespace LinqProjectIpi.SpaceMissions
         public string location { get; set; }
         
 
-        public SpaceMission(int missionId, string companyName, string location, string datum, string detail, string statusRocket, string statusMission)
+        public SpaceMissionModel(int missionId, string companyName, string location, string datum, string detail, string statusRocket, string statusMission)
         {
             this.missionId = missionId;
             this.companyName = companyName;

@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Xml;
-using LinqProjectIpi.SpaceMissions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Text.Json.Serialization;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
+using System.Text;
 
 namespace LinqProjectIpi.Utils
 {
@@ -39,5 +36,20 @@ namespace LinqProjectIpi.Utils
             File.WriteAllText(@"./JSON/starwarscharacters.json", jsonText);
         }
         
+        public static string validateIntegerInput(string input){
+
+            String result;
+            Regex regexNumber = new Regex("[0-9]");
+
+            if(regexNumber.IsMatch(input)){
+                result = input;
+                return result;
+            }
+            else{
+                Console.WriteLine("Your input is not a valid number");
+                    return "-1";
+            }
+        }
+       
     }
 }
