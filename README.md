@@ -30,11 +30,11 @@ Les menus de l'application :
           - Indiquer le critère de tri pour votre résultat
           - Confirmez puis visualisez le résultat
       3 - Characters by special traits, permet la recherche de personnage en fonction de caractéristiques spécifiques
-          1 - The giants : size >= 190cm, recherche tous les grands personnages, dont la taille est supérieure à 1,90m.
-          2 - The midgets : size <= 120cm, recherche tous les petits personnages, dont la taille est inférieure à 1,90m.
-          3 - The light-ones : mass <= 50kg, recherche tous les personnages légers, dont la masse est inférieure à 50kg.
-          4 - The big-ones : size >= 150kg, recherche tous les personnages lourds, dont la masse est supérieure à 150kg.
-          5 - The elders : age >= 100 years old, recherche tous les vieux personnages, dont l'âge est supérieure à 100 ans.
+          - 1 - The giants : size >= 190cm, recherche tous les grands personnages, dont la taille est supérieure à 1,90m.
+          - 2 - The midgets : size <= 120cm, recherche tous les petits personnages, dont la taille est inférieure à 1,90m.
+          - 3 - The light-ones : mass <= 50kg, recherche tous les personnages légers, dont la masse est inférieure à 50kg.
+          - 4 - The big-ones : size >= 150kg, recherche tous les personnages lourds, dont la masse est supérieure à 150kg.
+          - 5 - The elders : age >= 100 years old, recherche tous les vieux personnages, dont l'âge est supérieure à 100 ans.
       4 - Add a character : permet d'ajouter un personnage en détaillant chacun de ses caractéristiques. Si une caractéristique est inconnue, merci d'indiquer NA.
       5 - Convert XML Dataset into JSON : permet de convertir le jeu de données du format .XML vers le format .JSON (stocké dans ./JSON)
       6 - Return to main menu : retour au menu principal
