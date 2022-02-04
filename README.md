@@ -19,7 +19,7 @@ Pour lancer l'application, utiliser le .exe présent dans le dossier "applicatio
     4-
 
   - _Star Wars :_ 
-    - All characters details, permet d'afficher les détails de tous les personnages présents dans le jeu de donnée.
+    - All characters details, permet d'afficher les détails de tous les personnages présents dans le jeu de donnée. Les informations indisponibles (NA pour "Non-Available) ne          sont pas affichées
     - Search Mode, permet de chercher un personnage en fonction d'un critère et classe les résultats de la recherche en fonction d'un autre critère (différent du premier)
         les résultats sont classés par odre alphabétique (ou croissant si ce sont des valeurs numériques).
         - Indiquer le critère de recherche
