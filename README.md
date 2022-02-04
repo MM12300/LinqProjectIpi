@@ -32,7 +32,7 @@ Pour lancer l'application, utiliser le .exe présent dans le dossier "applicatio
         - The light-ones : mass <= 50kg, recherche tous les personnages légers, dont la masse est inférieure à 50kg.
         - The big-ones : size >= 150kg, recherche tous les personnages lourds, dont la masse est supérieure à 150kg.
         - The elders : age >= 100 years old, recherche tous les vieux personnages, dont l'âge est supérieure à 100 ans.
-    - Add a character : permet d'ajouter un personnage en détaillant chacun de ses caractéristiques. Si une caractéristique est inconnue, merci d'indiquer NA.
+    - Add a character : permet d'ajouter un personnage en détaillant chacun de ses caractéristiques. Un nouveau personnage a besoin au minimum d'un nom et d'une caractéristique.
     - Convert XML Dataset into JSON : permet de convertir le jeu de données du format .XML vers le format .JSON (stocké dans ./JSON)
     - Return to main menu : retour au menu principal
     
