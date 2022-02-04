@@ -34,6 +34,8 @@ namespace LinqProjectIpi.Utils
 
             string jsonText = JsonConvert.SerializeXmlNode(doc);
             File.WriteAllText(@"./JSON/starwarscharacters.json", jsonText);
+            Console.WriteLine("The Star Wars dataset has been converted from XML to JSON");
+            Hmi.pushEnter();
         }
         
         public static string validateIntegerInput(string input){
