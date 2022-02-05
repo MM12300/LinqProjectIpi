@@ -8,23 +8,25 @@ using System.Text.RegularExpressions;
 
 namespace LinqProjectIpi
 {
-    public class StarWarsCharactersHMI{
+    public class StarWarsCharactersHMI
+    {
 
         private XElement xmlFile = XElement.Load($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
 
         // Main method containing options menu
-        public void main(){
+        public void main()
+        {
             Console.WriteLine(Directory.GetCurrentDirectory());
             Console.Clear();
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
-            Hmi.centeredOutput("███████╗████████╗ █████╗ ██████╗     ██╗    ██╗ █████╗ ██████╗ ███████");
-            Hmi.centeredOutput("██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██║    ██║██╔══██╗██╔══██╗██╔════╝");
-            Hmi.centeredOutput("███████╗   ██║   ███████║██████╔╝    ██║ █╗ ██║███████║██████╔╝███████╗");
-            Hmi.centeredOutput("╚════██║   ██║   ██╔══██║██╔══██╗    ██║███╗██║██╔══██║██╔══██╗╚════██║");
-            Hmi.centeredOutput("███████║   ██║   ██║  ██║██║  ██║    ╚███╔███╔╝██║  ██║██║  ██║███████║");
-            Hmi.centeredOutput("╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝");
+            Hmi.centeredOutput("                    ███████╗████████╗ █████╗ ██████╗     ██╗    ██╗ █████╗ ██████╗ ███████");
+            Hmi.centeredOutput("                    ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗    ██║    ██║██╔══██╗██╔══██╗██╔════╝");
+            Hmi.centeredOutput("                    ███████╗   ██║   ███████║██████╔╝    ██║ █╗ ██║███████║██████╔╝███████╗");
+            Hmi.centeredOutput("                    ╚════██║   ██║   ██╔══██║██╔══██╗    ██║███╗██║██╔══██║██╔══██╗╚════██║");
+            Hmi.centeredOutput("                    ███████║   ██║   ██║  ██║██║  ██║    ╚███╔███╔╝██║  ██║██║  ██║███████║");
+            Hmi.centeredOutput("                    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝     ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -39,14 +41,15 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - Search Mode");
             Console.WriteLine("3 - Characters by special traits");
             Console.WriteLine("4 - Add a character");
-            Console.WriteLine("5 - Return to main menu");
+            Console.WriteLine("5 - Convert Json Dataset into XML");
+            Console.WriteLine("6 - Return to main menu");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\r\n Choose an option");
             Console.ResetColor();
 
             switch (Console.ReadLine())
-                {
+            {
                 case "1":
                     Console.WriteLine();
                     Console.ForegroundColor = ConsoleColor.DarkBlue;
@@ -88,6 +91,11 @@ namespace LinqProjectIpi
                     break;
 
                 case "5":
+                    Misc.saveXmlToJson();
+                    main();
+                    break;
+
+                case "6":
                     Console.WriteLine("Return to main menu");
                     Hmi.main();
                     break;
@@ -96,8 +104,8 @@ namespace LinqProjectIpi
                     Hmi.wrongOptions();
                     options();
                     break;
-                }
             }
+        }
 
 
         // Get all characters from XML file
@@ -129,7 +137,7 @@ namespace LinqProjectIpi
         {
             string output = "";
             int number = 0;
-            if (allcharacters.Any() && allcharacters != null )
+            if (allcharacters.Any() && allcharacters != null)
             {
                 foreach (XElement character in allcharacters)
                 {
@@ -149,6 +157,11 @@ namespace LinqProjectIpi
                             else if (element.Name == "Mass")
                             {
                                 output += element.Name + " : " + element.Value + "kg" + "\r\n";
+
+                            }
+                            else if (element.Name == "birth_year")
+                            {
+                                output += element.Name + " : " + element.Value + " BBY (Before Battle of Yavin)" + "\r\n";
                             }
                             else
                             {
@@ -176,9 +189,9 @@ namespace LinqProjectIpi
             Console.WriteLine("1 - Name");
             Console.WriteLine("2 - Height");
             Console.WriteLine("3 - Mass");
-            Console.WriteLine("4 - Hair");
-            Console.WriteLine("5 - Skin");
-            Console.WriteLine("6 - Eye");
+            Console.WriteLine("4 - Hair Color");
+            Console.WriteLine("5 - Skin Color");
+            Console.WriteLine("6 - Eye Color");
             Console.WriteLine("7 - Birth Year");
             Console.WriteLine("8 - Gender");
             Console.WriteLine("9 - Homeworld");
@@ -241,7 +254,7 @@ namespace LinqProjectIpi
                     break;
             }
         }
-   
+
         //Get character(s) with a criteria and a filter (always ascendant for alphabetic order)
         public void getCharactersBy(string criteria, string filter, string search)
         {
@@ -253,13 +266,14 @@ namespace LinqProjectIpi
                              orderby element.Element(filter).Value ascending
                              where element.Element("Gender").Value == "male"
                              select element;
-            }else if(search == "female")
+            }
+            else if (search == "female")
             {
                 characters = from element in xmlFile.Descendants("character")
-                                orderby element.Element(filter).Value ascending
-                                where element.Element("Gender").Value == "female"
-                                select element;
-            }          
+                             orderby element.Element(filter).Value ascending
+                             where element.Element("Gender").Value == "female"
+                             select element;
+            }
             else
             {
                 characters = from element in xmlFile.Descendants("character")
@@ -283,9 +297,9 @@ namespace LinqProjectIpi
             Console.WriteLine("1 - Name");
             Console.WriteLine("2 - Height");
             Console.WriteLine("3 - Mass");
-            Console.WriteLine("4 - Hair");
-            Console.WriteLine("5 - Skin");
-            Console.WriteLine("6 - Eye");
+            Console.WriteLine("4 - Hair Color");
+            Console.WriteLine("5 - Skin Color");
+            Console.WriteLine("6 - Eye Color");
             Console.WriteLine("7 - Birth Year");
             Console.WriteLine("8 - Gender");
             Console.WriteLine("9 - Homeworld");
@@ -335,7 +349,7 @@ namespace LinqProjectIpi
                     break;
             }
 
-            if(searchBy == orderBy)
+            if (searchBy == orderBy)
             {
                 Console.WriteLine("You can't order by {0} as you search by {1}", Hmi.cleanOutput(orderBy), Hmi.cleanOutput(searchBy));
                 Console.WriteLine("Please specify again what you would like to order your search by");
@@ -426,8 +440,7 @@ namespace LinqProjectIpi
             Console.WriteLine("2 - The midgets : size <= 120cm");
             Console.WriteLine("3 - The light-ones : mass <= 50kg");
             Console.WriteLine("4 - The big-ones : size >= 150kg");
-            Console.WriteLine("5 - The elders : age >= 100 years old");
-            Console.WriteLine("6 - Return to Star Wars menu");
+            Console.WriteLine("5 - Return to Star Wars menu");
             switch (Console.ReadLine())
             {
                 case "1":
@@ -447,10 +460,6 @@ namespace LinqProjectIpi
                     specialTraits();
                     break;
                 case "5":
-                    getCharactersBySpecialTraits("old");
-                    specialTraits();
-                    break;
-                case "6":
                     main();
                     break;
                 default:
@@ -469,7 +478,8 @@ namespace LinqProjectIpi
                              orderby element.Element("Name").Value ascending
                              where element.Element("Height").Value != "NA" && int.Parse(element.Element("Height").Value) >= 200
                              select element;
-            }else if (trait == "midgets")
+            }
+            else if (trait == "midgets")
             {
                 characters = from element in xmlFile.Descendants("character")
                              orderby element.Element("Name").Value ascending
@@ -512,7 +522,7 @@ namespace LinqProjectIpi
             Console.ResetColor();
 
             string name = newCharacterInput("name");
-            string height = newCharacterInput("height"); 
+            string height = newCharacterInput("height");
             string mass = newCharacterInput("mass");
             string hairColor = newCharacterInput("hair color");
             string skinColor = newCharacterInput("skin color");
@@ -536,10 +546,34 @@ namespace LinqProjectIpi
 
             try
             {
-                xmlFile.Add(newCharacter);
-                xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
-                Console.WriteLine("New character added");
-                Hmi.pushEnter();
+                if (name == "NA" || (height == "NA" && height == "NA" && mass == "NA" && hairColor == "NA" && skinColor == "NA" && eyeColor == "NA" && birthYear == "NA" && gender == "NA" && homeworld == "NA" && specie == "NA"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("A new character needs at least a name and one caracteristic");
+                    Console.ResetColor();
+                    Hmi.pushEnter();
+                }
+                else
+                {
+                    xmlFile.Add(newCharacter);
+                    xmlFile.Save($@"{Directory.GetCurrentDirectory()}/XML/starwarscharacters.xml");
+                    Console.WriteLine();
+                    Console.WriteLine("New character added");
+                    Console.WriteLine();
+                    Console.WriteLine("Name : {0}", name);
+                    Console.WriteLine("Height : {0}", height);
+                    Console.WriteLine("Mass : {0}", mass);
+                    Console.WriteLine("Hair color : {0}", hairColor);
+                    Console.WriteLine("Skin color : {0}", skinColor);
+                    Console.WriteLine("Eye Color : {0}", eyeColor);
+                    Console.WriteLine("Birth Year : {0}", birthYear);
+                    Console.WriteLine("Gender : {0}", gender);
+                    Console.WriteLine("Homeworld : {0}", homeworld);
+                    Console.WriteLine("Specie : {0}", specie);
+                    Console.WriteLine();
+                    Hmi.pushEnter();
+                }
+
             }
 
             catch (Exception exc)
@@ -557,34 +591,55 @@ namespace LinqProjectIpi
 
             //Check if number
             Regex regexNumber = new Regex("[0-9]");
+            Regex regexLetter = new Regex("^[^0-9]+$");
 
-
-            //Input check for name, colors, specie and homeworld
-            if (parameter == "name" || parameter == "eye color" || parameter == "skin color" || parameter == "hair color" || parameter == "specie" || parameter =="homeworld")
+            if (input.Length == 0 || input == null)
             {
-                if((input.Length < 20))
+                input = "NA";
+            }
+
+
+            //Input check for name, specie and homeworld
+            if (parameter == "name" || parameter == "specie" || parameter == "homeworld")
+            {
+                if ((input.Length < 20) || input == "NA")
                 {
                     result = input;
                 }
                 else
                 {
                     Console.WriteLine("Error. Please try again with less than 20 characters");
-                    newCharacterInput(parameter);
+                    result = newCharacterInput(parameter);
                 }
             }
-           
+
+            //Input check for colors
+            if (parameter == "eye color" || parameter == "skin color" || parameter == "hair color")
+            {
+                Console.WriteLine(regexLetter.IsMatch(input));
+                if ((input.Length < 20 && regexLetter.IsMatch(input)) || input == "NA")
+                {
+                    result = input;
+                }
+                else
+                {
+                    Console.WriteLine("Error. Please try again with less than 20 characters and no numbers");
+                    result = newCharacterInput(parameter);
+                }
+            }
+
 
             //Input check for height and mass
-            if (parameter == "height" || parameter == "mass" )
+            if (parameter == "height" || parameter == "mass")
             {
-                if((regexNumber.IsMatch(input) && input.Length <= 4))
+                if ((regexNumber.IsMatch(input) && input.Length <= 4) || input == "NA")
                 {
                     result = input;
                 }
                 else
                 {
                     Console.WriteLine("Error. Please try again with only numbers with 4 characters maximum (nobody can't be that tall or that big)");
-                    newCharacterInput(parameter);
+                    result = newCharacterInput(parameter);
                 }
             }
 
@@ -592,7 +647,7 @@ namespace LinqProjectIpi
             //Input check for gender
             if (parameter == "gender")
             {
-                if((input == "male" || input == "female"))
+                if ((input == "male" || input == "female" || input == "NA"))
                 {
                     result = input;
                 }
@@ -605,16 +660,16 @@ namespace LinqProjectIpi
 
 
             //Input check for birth year
-            if ( parameter == "birth year")
+            if (parameter == "birth year")
             {
-                if (regexNumber.IsMatch(input) && input.Length <= 4)
+                if ((regexNumber.IsMatch(input) && input.Length <= 4) || input == "NA")
                 {
                     result = input;
-                }            
+                }
                 else
                 {
-                    Console.WriteLine("Error. Please try again with someone younger, nobody can be that old in the Star Wars Universe");
-                    newCharacterInput(parameter);
+                    Console.WriteLine("Error. Please try again with a numeric value.");
+                    result = newCharacterInput(parameter);
                 }
             }
 
