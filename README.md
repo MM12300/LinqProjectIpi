@@ -9,7 +9,9 @@ Choix de la langue anglaise pour concevoir l'application dans la mesure où les 
 - format JSON : les missions spatiales
 
 **COMMENT UTILISER L'APPLICATION :** 
-Pour lancer l'application, utiliser le .exe présent dans le dossier "application".
+Dézipper le dossier LinqPublish.
+Utiliser le .exe présent dans ce dossier.
+Si vous utilisez les fonctions d'export d'un format vers un autre autre (JSON/XML ou XML/JSON), les fichiers sera copié dans ce dossier dpeuis lequel le .exe est exécuté.
 
 **Les menus de l'application :**
   - _Les missions spatiales depuis 1957 :_
