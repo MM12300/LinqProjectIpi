@@ -1,0 +1,8 @@
+C:\_CODE\Linq_Publish\JSON\spacemission.json
+C:\_CODE\Linq_Publish\XML\starwarscharacters.xml
+C:\_CODE\Linq_Publish\LinqProjectIpi.exe
+C:\_CODE\Linq_Publish\LinqProjectIpi.dll
+C:\_CODE\Linq_Publish\LinqProjectIpi.deps.json
+C:\_CODE\Linq_Publish\LinqProjectIpi.runtimeconfig.json
+C:\_CODE\Linq_Publish\LinqProjectIpi.pdb
+C:\_CODE\Linq_Publish\Newtonsoft.Json.dll
